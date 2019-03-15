@@ -12,46 +12,48 @@
 <div class="uk-section uk-section-muted">
     <div class="uk-container">
         <h3>PoolCalcIo</h3>
-        <form class="uk-form-horizontal">
-            <fieldset class="uk-fieldset">
+        <form class="uk-grid-small" uk-grid>
+            <div class="uk-width-1-1">
                 <legend class="uk-legend">Volumenstrom - Rohrinnendurchmesser - Strömungsgeschwindigkeit</legend>
-                <div>
-                    <label class="uk-form-label">Volumenstrom</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" type="text" placeholder="q">
-                    </div>
-                    <div class="uk-form-controls">
-                        <select class="uk-select">
-                            <option>m³/h</option>
-                            <option>l/h</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-form-label">Rohrinnendurchmesser</div>
-                    <div class="uk-form-controls uk-form-controls-text">
-                        <input class="uk-input" type="text" placeholder="di">
-                    </div>
-                    <div class="uk-form-controls">
-                        <select class="uk-select">
-                            <option>mm</option>
-                            <option>cm</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-form-label">Strömungsgeschwindigkeit</div>
-                    <div class="uk-form-controls uk-form-controls-text">
-                        <input class="uk-input" type="text" placeholder="v">
-                    </div>
-                    <div class="uk-form-controls">
-                        <select class="uk-select">
-                            <option>m/s</option>
-                            <option>cm/s</option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
+            </div>
+            <div class="uk-width-1-2">
+                <div class="uk-form-label">Volumenstrom</div>
+            </div>
+            <div class="uk-width-1-4">
+                    <input class="uk-input" type="text" placeholder="q">
+            </div>
+            <div class="uk-width-1-4">
+                <select class="uk-select">
+                    <option>m³/h</option>
+                    <option>l/h</option>
+                </select>
+            </div>
+
+            <div class="uk-width-1-2">
+                <div class="uk-form-label">Rohrinnendurchmesser</div>
+            </div>
+            <div class="uk-width-1-4">
+                <input class="uk-input" type="text" placeholder="di">
+            </div>
+            <div class="uk-width-1-4">
+                <select class="uk-select">
+                    <option>mm</option>
+                    <option>cm</option>
+                </select>
+            </div>
+
+            <div class="uk-width-1-2">
+                <div class="uk-form-label">Strömungsgeschwindigkeit</div>
+            </div>
+            <div class="uk-width-1-4">
+                <input class="uk-input" type="text" placeholder="v">
+            </div>
+            <div class="uk-width-1-4">
+                <select class="uk-select">
+                    <option>m/s</option>
+                    <option>cm/s</option>
+                </select>
+            </div>
         </form>
     </div>
 </div>
