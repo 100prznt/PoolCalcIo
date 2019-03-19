@@ -18,7 +18,7 @@
         <div class="uk-card-media-top">
             <img src="media/tom-grimbert-tomgrimbert-788775-unsplash.jpg" alt="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
         </div>
-        <div class="uk-card-header">
+        <div class="uk-card-header" id="header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
                     <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div uk-alert class="uk-alert-danger" id="error">
+        <div uk-alert class="uk-alert-danger uk-invisible" id="error">
             <a class="uk-alert-close" uk-close></a>
             <h3>Fehlerhafte Eingabe</h3>
             <p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p>
@@ -88,7 +88,6 @@
         $('#version').text("v" + data["version"])
     });
 
-    UIkit.alert("hallo, was ist los");
 
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
@@ -117,6 +116,8 @@
             a = calcA(Number(txt_di.val()) * basefac_di);
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(v / basefac_v);
+        } else {
+            $('#header').after("alert");
         }
     });
 
