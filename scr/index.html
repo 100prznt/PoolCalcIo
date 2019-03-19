@@ -28,8 +28,9 @@
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select" name="unit_q">
-                    <option>m³/h</option>
-                    <option>l/h</option>
+                    <option value="1">m³/h</option>
+                    <option value="0.001">l/h</option>
+                    <option value="0.06">l/min</option>
                 </select>
             </div>
 
@@ -41,8 +42,9 @@
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select" name="unit_di">
-                    <option>mm</option>
-                    <option>cm</option>
+                    <option value="0.001">mm</option>
+                    <option value="0.01">cm</option>
+                    <option value="1">m</option>
                 </select>
             </div>
 
@@ -54,8 +56,8 @@
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select" name="unit_v">
-                    <option>m/s</option>
-                    <option>cm/s</option>
+                    <option value="0.01">cm/s</option>
+                    <option value="1">m/s</option>
                 </select>
             </div>
             <div class="uk-width-1-1">
@@ -65,7 +67,7 @@
     </div>
 </div>
 <script>
-    console.log("hallo");
+    console.log("v1.0.1");
 
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
@@ -74,11 +76,13 @@
     var sel_unit_di = $("select[name=unit_di]").first();
     var sel_unit_v = $("select[name=unit_v]").first();
 
-    var unit_q = sel_unit_q.children("option").filter(":selected").text();
-    var unit_di = sel_unit_di.children("option").filter(":selected").text();
-    var unit_v = sel_unit_v.children("option").filter(":selected").text();
+    var basefac_q = sel_unit_q.children("option").filter(":selected").val();
+    var basefac_di = sel_unit_di.children("option").filter(":selected").val();
+    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
 
-    console.log(unit_q + " " + unit_di + " " + unit_v);
+    console.log("Basfactor Q = " + basefac_q);
+    console.log("Basfactor d_i = " + basefac_di);
+    console.log("Basfactor v = " + basefac_v);
 
     sel_q.change(function() {
        console.log("fuuuu");
