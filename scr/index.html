@@ -86,21 +86,19 @@
     sel_unit_q.change(function() {
         printBaseFactors();
     });
+
     sel_unit_di.change(function() {
         console.log("Start: sel_unit_di");
         printBaseFactors();
-
         //to base
         di_base = Number(txt_di.val()) * basefac_di;
-
         //get new basefac
         basefac_di = sel_unit_di.children("option").filter(":selected").val();
-
         //to specific unit
         txt_di.val(di_base / basefac_di);
-
         console.log("End: sel_unit_di");
     });
+
     sel_unit_v.change(function() {
         printBaseFactors();
     });
