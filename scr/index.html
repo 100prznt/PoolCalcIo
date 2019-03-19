@@ -103,7 +103,8 @@
             q = a * Number(txt_v.val()) * basefac_v;
             txt_q.val(q / basefac_q);
         } else if (txt_di.val() == "") {
-            console.log("clac d_i");
+            a = (Number(txt_q.val()) * basefac_q) / (Number(txt_v.val()) * basefac_v);
+            di = Math.sqrt(a * 4 / Math.PI) / basefac_di;
         } else if (txt_v.val() == "") {
             a = calcA(Number(txt_di.val()) * basefac_di);
             v = Number(txt_q.val()) * basefac_q / a;
