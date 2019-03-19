@@ -23,7 +23,7 @@
                 <div class="uk-form-label">Volumenstrom</div>
             </div>
             <div class="uk-width-1-4">
-                    <input class="uk-input" type="text" placeholder="q">
+                    <input class="uk-input" type="text" name="q">
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select">
@@ -36,7 +36,7 @@
                 <div class="uk-form-label">Rohrinnendurchmesser</div>
             </div>
             <div class="uk-width-1-4">
-                <input class="uk-input" type="text" placeholder="di">
+                <input class="uk-input" type="text" name="di">
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select">
@@ -49,7 +49,7 @@
                 <div class="uk-form-label">Strömungsgeschwindigkeit</div>
             </div>
             <div class="uk-width-1-4">
-                <input class="uk-input" type="text" placeholder="v">
+                <input class="uk-input" type="text" name="v">
             </div>
             <div class="uk-width-1-4">
                 <select class="uk-select">
@@ -63,5 +63,20 @@
         </form>
     </div>
 </div>
+<script>
+    var txt_q = $("input[name=q]").first();
+    var txt_di = $("input[name=di]").first();
+    var txt_v = $("input[name=v]").first();
+
+    txt_q.on('input', function (e) {
+        alert("on Q");
+        e.preventDefault();
+    });
+
+    function isNumber(number, min, max) {
+        value = Number(number);
+        return (!isNaN(value) && value <= max && value >= min);
+    }
+</script>
 </body>
 </html>
