@@ -81,7 +81,7 @@
 <script>
     $.getJSON( "version.json", function( data ) {
         console.log("v" + data["version"]);
-        $('#pTest').text("v" + data["version"])
+        $('#version').text("v" + data["version"])
     });
 
     var txt_q = $("input[name=q]").first();
