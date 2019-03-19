@@ -80,14 +80,32 @@
     var basefac_di = sel_unit_di.children("option").filter(":selected").val();
     var basefac_v = sel_unit_v.children("option").filter(":selected").val();
 
-    console.log("Basfactor Q = " + basefac_q);
-    console.log("Basfactor d_i = " + basefac_di);
-    console.log("Basfactor v = " + basefac_v);
 
-    sel_q.change(function() {
-       console.log("fuuuu");
+    sel_unit_q.change(function() {
+        printBaseFactors();
+    });
+    sel_unit_di.change(function() {
+        printBaseFactors();
+
+        //to base
+        di_base = Number(txt_di.text) * basefac_di;
+
+        //get new basefac
+        basefac_di = sel_unit_di.children("option").filter(":selected").val();
+
+        //to specific unit
+        txt_di.text = di_base / basefac_di;
+
+    });
+    sel_unit_v.change(function() {
+        printBaseFactors();
     });
 
+    function printBaseFactors() {
+        console.log("Basefactor Q = " + basefac_q);
+        console.log("Basefactor d_i = " + basefac_di);
+        console.log("Basefactor v = " + basefac_v);
+    }
 
     function isNumber(number, min, max) {
         value = Number(number);
