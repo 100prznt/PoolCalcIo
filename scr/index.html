@@ -88,13 +88,17 @@
         console.log("SUBMIT");
 
         if (txt_q.val() == "") {
-            console.log("clac Q");
+            console.log("clac Q   PI=" + Math.PI);
+            a = calcA(Number(txt_di.val()) * basefac_di);
+            q = a * Number(txt_v) * basefac_v;
+            txt_q.val(q);
         } else if (txt_di.val() == "") {
             console.log("clac d_i");
         } else if (txt_v.val() == "") {
             console.log("clac v");
         }
     });
+
 
 
     sel_unit_q.change(function() {
@@ -131,6 +135,10 @@
         console.log("Basefactor Q = " + basefac_q);
         console.log("Basefactor d_i = " + basefac_di);
         console.log("Basefactor v = " + basefac_v);
+    }
+
+    function calcA(diameter) {
+        return Math.pow(diameter, 2) * Math.PI / 4;
     }
 
     function isNumber(number, min, max) {
