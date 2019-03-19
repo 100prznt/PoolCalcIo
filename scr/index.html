@@ -18,7 +18,7 @@
         <div class="uk-card-media-top">
             <img src="media/tom-grimbert-tomgrimbert-788775-unsplash.jpg" alt="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
         </div>
-        <div class="uk-card-header" id="header">
+        <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
                     <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="uk-card-body">
+        <div class="uk-card-body" id="content">
             <form class="uk-grid-small" uk-grid id="qvd-calc">
                 <div class="uk-width-1-1">
                     <div class="uk-legend">Volumenstrom - Rohrinnendurchmesser - Strömungsgeschwindigkeit</div>
@@ -112,7 +112,7 @@
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(v / basefac_v);
         } else {
-            $('#header').after("<div uk-alert><a class=\"uk-alert-close\" uk-close></a><h3>Fehlerhafte Eingabe</h3><p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p></div>");
+            $('#content').prepend("<div uk-alert class='uk-alert-danger'><a class='uk-alert-close' uk-close></a><h3>Fehlerhafte Eingabe</h3><p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p></div>");
         }
     });
 
