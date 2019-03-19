@@ -14,56 +14,66 @@
 </head>
 <body>
 <div class="uk-section uk-section-muted">
-    <div class="uk-card uk-card-body">
-        <h3>PoolCalcIo</h3>
-        <form class="uk-grid-small" uk-grid id="qvd-calc">
-            <div class="uk-width-1-1">
-                <div class="uk-legend">Volumenstrom - Rohrinnendurchmesser - Strömungsgeschwindigkeit</div>
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+        <h3 class="uk-card-title">PoolCalcIo</h3>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
+                    <p class="uk-text-meta uk-margin-remove-top">v1.0.0</p>
+                </div>
             </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form-label">Volumenstrom</div>
-            </div>
-            <div class="uk-width-1-4">
-                    <input class="uk-input" type="text" name="q">
-            </div>
-            <div class="uk-width-1-4">
-                <select class="uk-select" name="unit_q">
-                    <option value="1">m³/h</option>
-                    <option value="0.001">l/h</option>
-                    <option value="0.06">l/min</option>
-                </select>
-            </div>
+        </div>
+        <div class="uk-card-body">
+            <form class="uk-grid-small" uk-grid id="qvd-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Volumenstrom - Rohrinnendurchmesser - Strömungsgeschwindigkeit</div>
+                </div>
+                <div class="uk-width-1-2">
+                    <div class="uk-form-label">Volumenstrom</div>
+                </div>
+                <div class="uk-width-1-4">
+                        <input class="uk-input" type="text" name="q">
+                </div>
+                <div class="uk-width-1-4">
+                    <select class="uk-select" name="unit_q">
+                        <option value="1">m³/h</option>
+                        <option value="0.001">l/h</option>
+                        <option value="0.06">l/min</option>
+                    </select>
+                </div>
 
-            <div class="uk-width-1-2">
-                <div class="uk-form-label">Rohrinnendurchmesser</div>
-            </div>
-            <div class="uk-width-1-4">
-                <input class="uk-input" type="text" name="di">
-            </div>
-            <div class="uk-width-1-4">
-                <select class="uk-select" name="unit_di">
-                    <option value="0.001">mm</option>
-                    <option value="0.01">cm</option>
-                    <option value="1">m</option>
-                </select>
-            </div>
+                <div class="uk-width-1-2">
+                    <div class="uk-form-label">Rohrinnendurchmesser</div>
+                </div>
+                <div class="uk-width-1-4">
+                    <input class="uk-input" type="text" name="di">
+                </div>
+                <div class="uk-width-1-4">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001">mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
 
-            <div class="uk-width-1-2">
-                <div class="uk-form-label">Strömungsgeschwindigkeit</div>
-            </div>
-            <div class="uk-width-1-4">
-                <input class="uk-input" type="text" name="v">
-            </div>
-            <div class="uk-width-1-4">
-                <select class="uk-select" name="unit_v">
-                    <option value="0.01">cm/s</option>
-                    <option value="1">m/s</option>
-                </select>
-            </div>
-            <div class="uk-width-1-1">
-                <button class="uk-button uk-button-default">Berechnung</button>
-            </div>
-        </form>
+                <div class="uk-width-1-2">
+                    <div class="uk-form-label">Strömungsgeschwindigkeit</div>
+                </div>
+                <div class="uk-width-1-4">
+                    <input class="uk-input" type="text" name="v">
+                </div>
+                <div class="uk-width-1-4">
+                    <select class="uk-select" name="unit_v">
+                        <option value="0.01">cm/s</option>
+                        <option value="1">m/s</option>
+                    </select>
+                </div>
+                <div class="uk-width-1-1">
+                    <button class="uk-button uk-button-default">Berechnung</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <script>
