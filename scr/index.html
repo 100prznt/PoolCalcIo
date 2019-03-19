@@ -52,7 +52,7 @@
                 <input class="uk-input" type="text" name="v">
             </div>
             <div class="uk-width-1-4">
-                <select class="uk-select" name="unit_v">
+                <select class="uk-select" name="unit_v" id="unit_v">
                     <option>m/s</option>
                     <option>cm/s</option>
                 </select>
@@ -71,7 +71,7 @@
 
     var sel_v = $("select[name=unit_v]").first();
 
-    $("select").change(function() {
+    $("unit_v").change(function() {
         console.log("unit_v changed");
     });
 
