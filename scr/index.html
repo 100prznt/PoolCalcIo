@@ -90,8 +90,8 @@
         if (txt_q.val() == "") {
             console.log("clac Q   PI=" + Math.PI);
             a = calcA(Number(txt_di.val()) * basefac_di);
-            q = a * Number(txt_v) * basefac_v;
-            txt_q.val(q);
+            q = a * Number(txt_v.val()) * basefac_v;
+            txt_q.val(q / basefac_q);
         } else if (txt_di.val() == "") {
             console.log("clac d_i");
         } else if (txt_v.val() == "") {
