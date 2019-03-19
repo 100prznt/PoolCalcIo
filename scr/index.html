@@ -112,7 +112,7 @@
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(v / basefac_v);
         } else {
-            $('#header').after("alert");
+            $('#header').after("<div uk-alert><a class=\"uk-alert-close\" uk-close></a><h3>Fehlerhafte Eingabe</h3><p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p></div>");
         }
     });
 
