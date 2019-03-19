@@ -67,7 +67,9 @@
     </div>
 </div>
 <script>
-    console.log("v1.0.1");
+    $.getJSON( "version.json", function( data ) {
+        console.log("v" + data["version"]);
+    });
 
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
@@ -129,10 +131,6 @@
         value = Number(number);
         return (!isNaN(value) && value <= max && value >= min);
     }
-
-    $.getJSON( "version.json", function( data ) {
-        console.log(data);
-    });
 </script>
 </body>
 </html>
