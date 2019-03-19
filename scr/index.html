@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div uk-alert class="uk-alert-danger">
+        <div uk-alert class="uk-alert-danger" id="error">
             <a class="uk-alert-close" uk-close></a>
             <h3>Fehlerhafte Eingabe</h3>
             <p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p>
@@ -87,6 +87,8 @@
     $.getJSON( "version.json", function( data ) {
         $('#version').text("v" + data["version"])
     });
+
+    UIkit.alert("hallo, was ist los");
 
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
