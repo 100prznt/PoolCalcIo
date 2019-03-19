@@ -84,7 +84,12 @@
     printBaseFactors();
 
     sel_unit_q.change(function() {
-        printBaseFactors();
+        //to base
+        q_base = Number(txt_q.val()) * basefac_q;
+        //get new basefac
+        basefac_q = sel_unit_q.children("option").filter(":selected").val();
+        //to specific unit
+        txt_q.val(q_base / basefac_q);
     });
 
     sel_unit_di.change(function() {
@@ -100,7 +105,12 @@
     });
 
     sel_unit_v.change(function() {
-        printBaseFactors();
+        //to base
+        v_base = Number(txt_v.val()) * basefac_v;
+        //get new basefac
+        basefac_v = sel_unit_v.children("option").filter(":selected").val();
+        //to specific unit
+        txt_v.val(v_base / basefac_v);
     });
 
     function printBaseFactors() {
