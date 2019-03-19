@@ -80,7 +80,6 @@
 </div>
 <script>
     $.getJSON( "version.json", function( data ) {
-        console.log("v" + data["version"]);
         $('#version').text("v" + data["version"])
     });
 
@@ -90,7 +89,6 @@
     var sel_unit_q = $("select[name=unit_q]").first();
     var sel_unit_di = $("select[name=unit_di]").first();
     var sel_unit_v = $("select[name=unit_v]").first();
-
     var basefac_q = sel_unit_q.children("option").filter(":selected").val();
     var basefac_di = sel_unit_di.children("option").filter(":selected").val();
     var basefac_v = sel_unit_v.children("option").filter(":selected").val();
@@ -101,18 +99,17 @@
         console.log("SUBMIT");
 
         if (txt_q.val() == "") {
-            console.log("clac Q   PI=" + Math.PI);
             a = calcA(Number(txt_di.val()) * basefac_di);
             q = a * Number(txt_v.val()) * basefac_v;
             txt_q.val(q / basefac_q);
         } else if (txt_di.val() == "") {
             console.log("clac d_i");
         } else if (txt_v.val() == "") {
-            console.log("clac v");
+            a = calcA(Number(txt_di.val()) * basefac_di);
+            v = Number(txt_q.val()) * basefac_q / a;
+            txt_v.val(v / basefac_v);
         }
     });
-
-
 
     sel_unit_q.change(function() {
         //to base
