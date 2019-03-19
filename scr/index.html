@@ -129,6 +129,10 @@
         value = Number(number);
         return (!isNaN(value) && value <= max && value >= min);
     }
+
+    $.getJSON( "version.json", function( data ) {
+        console.log(data);
+    });
 </script>
 </body>
 </html>
