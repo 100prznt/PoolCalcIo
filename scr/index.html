@@ -86,6 +86,14 @@
     $('#qvd-calc').on('submit', function(e){
         e.preventDefault();
         console.log("SUBMIT");
+
+        if (txt_q.val() == "") {
+            console.log("clac Q");
+        } else if (txt_di.val() == "") {
+            console.log("clac d_i");
+        } else if (txt_v.val() == "") {
+            console.log("clac v");
+        }
     });
 
 
