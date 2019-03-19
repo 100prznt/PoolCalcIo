@@ -64,15 +64,17 @@
     </div>
 </div>
 <script>
-    console.log("hallo");
-    var txt_q = $("input[name=q]").first();
-    var txt_di = $("input[name=di]").first();
-    var txt_v = $("input[name=v]").first();
+    $(document).ready(function() {
+        console.log("hallo");
+        var txt_q = $("input[name=q]").first();
+        var txt_di = $("input[name=di]").first();
+        var txt_v = $("input[name=v]").first();
 
-    var sel_v = $("select[name=unit_v]").first();
+        var sel_v = $("select[name=unit_v]").first();
 
-    $("unit_v").change(function() {
-        console.log("unit_v changed");
+        $("#unit_v").change(function () {
+            console.log("unit_v changed");
+        });
     });
 
     function isNumber(number, min, max) {
