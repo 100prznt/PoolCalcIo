@@ -3,3 +3,9 @@
         padding-top: 0px !important;
     }
 }
+
+@media (max-width: 960px) {
+    .uk-height-1-1\@m {
+        height: 100% !important;
+    }
+}
