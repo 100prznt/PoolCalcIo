@@ -105,15 +105,15 @@
         if (txt_q.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_v.val())) {
             a = calcA(Number(txt_di.val()) * basefac_di);
             q = a * Number(txt_v.val()) * basefac_v;
-            txt_q.val(ath.round(q / basefac_q * 100) / 100);
+            txt_q.val(Math.round(q / basefac_q * 100) / 100);
         } else if (txt_di.val() == "" && $.isNumeric(txt_v.val()) && $.isNumeric(txt_q.val())) {
             a = (Number(txt_q.val()) * basefac_q) / (Number(txt_v.val()) * basefac_v);
             di = Math.sqrt(a * 4 / Math.PI);
-            txt_di.val(ath.round(di / basefac_di * 100) / 100);
+            txt_di.val(Math.round(di / basefac_di * 100) / 100);
         } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
             a = calcA(Number(txt_di.val()) * basefac_di);
             v = Number(txt_q.val()) * basefac_q / a;
-            txt_v.val(ath.round(v / basefac_v * 100) / 100);
+            txt_v.val(Math.round(v / basefac_v * 100) / 100);
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Punkt zu verwenden.</p></div>");
         }
@@ -125,19 +125,16 @@
         //get new basefac
         basefac_q = sel_unit_q.children("option").filter(":selected").val();
         //to specific unit
-        txt_q.val(q_base / basefac_q);
+        txt_q.val(Math.round(q_base / basefac_q * 100) / 100);
     });
 
     sel_unit_di.change(function() {
-        console.log("Start: sel_unit_di");
-        printBaseFactors();
         //to base
         di_base = Number(txt_di.val()) * basefac_di;
         //get new basefac
         basefac_di = sel_unit_di.children("option").filter(":selected").val();
         //to specific unit
-        txt_di.val(di_base / basefac_di);
-        console.log("End: sel_unit_di");
+        txt_di.val(Math.round(di_base / basefac_di * 100) / 100);
     });
 
     sel_unit_v.change(function() {
@@ -146,7 +143,7 @@
         //get new basefac
         basefac_v = sel_unit_v.children("option").filter(":selected").val();
         //to specific unit
-        txt_v.val(v_base / basefac_v);
+        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
     });
 
     function printBaseFactors() {
