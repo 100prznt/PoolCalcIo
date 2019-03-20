@@ -73,7 +73,7 @@
                     </select>
                 </div>
                 <div class="uk-width-1-1">
-                    <button class="uk-button uk-button-default uk-margin-top">Berechnung</button>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
                 </div>
             </form>
         </div>
@@ -113,7 +113,8 @@
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(v / basefac_v);
         } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten.</p></div>");
+            $('#alert').remove();
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Punkt zu verwenden.</p></div>");
         }
     });
 
