@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html prefix=“og: http://ogp.me/ns#“>
 <head>
     <title>PoolCalcIo</title>
     <meta charset="utf-8">
@@ -7,6 +7,14 @@
     <meta name="author" content="Ruemmler, Elias" />
     <meta name="copyright" content="Copyright 2019 - 100prznt.de" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:title" content="Volumenstrom - Strömungsgeschwindigkeit" />
+    <meta property="og:description" content="Online Rechner für Volumenstrom, Rohrinnendurchmesser und Strömungsgeschwindigkeit" />
+    <meta property="og:url" content="http://io.100prznt.de/" />
+    <meta property="og:image" content="media/header_pool_og.jpg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+
     <link rel="stylesheet" href="css/uikit.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/uikit.min.js"></script>
@@ -17,7 +25,7 @@
 <div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
     <div class="uk-card uk-card-default uk-width-xxlarge@m uk-height-viewport@m uk-align-center">
         <div class="uk-card-media-top">
-            <img src="media/tom-grimbert-tomgrimbert-788775-unsplash.jpg" title="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
+            <img src="media/header_pool_hiRes.jpg" title="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
         </div>
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -92,7 +100,6 @@
         $('#version').text("v" + data["version"])
     });
 
-
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
     var txt_v = $("input[name=v]").first();
@@ -102,7 +109,6 @@
     var basefac_q = sel_unit_q.children("option").filter(":selected").val();
     var basefac_di = sel_unit_di.children("option").filter(":selected").val();
     var basefac_v = sel_unit_v.children("option").filter(":selected").val();
-
 
     $('#qvd-calc').on('submit', function(e){
         e.preventDefault();
@@ -152,19 +158,8 @@
         txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
     });
 
-    function printBaseFactors() {
-        console.log("Basefactor Q = " + basefac_q);
-        console.log("Basefactor d_i = " + basefac_di);
-        console.log("Basefactor v = " + basefac_v);
-    }
-
     function calcA(diameter) {
         return Math.pow(diameter, 2) * Math.PI / 4;
-    }
-
-    function isNumber(number, min, max) {
-        value = Number(number);
-        return (!isNaN(value) && value <= max && value >= min);
     }
 </script>
 </body>
