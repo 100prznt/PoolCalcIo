@@ -112,7 +112,7 @@
 </div>
 <script>
     $.getJSON( "version.json", function( data ) {
-        $('#version').text("v" + data["version"] + "(" + new Date(data["committimestamp"]).getDate() + ")")
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")")
     });
 
     var txt_q = $("input[name=q]").first();
