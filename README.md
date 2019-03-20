@@ -3,4 +3,6 @@ Online Rechner für Volumenstrom, Rohrinnendurchmesser und Strömungsgeschwindig
 
 ## Aktuelle Version
 
-[![Current version](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fio.100prznt.de%2Fbadge.json?style=popout-square&logo=appveyor)](https://io.100prznt.de/)
+[![Bulid](https://img.shields.io/appveyor/ci/100prznt/ftpdeploytest.svg?logo=appveyor&style=popout-square)](https://ci.appveyor.com/project/100prznt/ftpdeploytest)
+
+[![Current version](https://img.shields.io/endpoint.svg?color=ff2e64&logo=appveyor&style=popout-square&url=https%3A%2F%2Fio.100prznt.de%2Fbadge.json)](https://io.100prznt.de/)
