@@ -100,20 +100,20 @@
         e.preventDefault();
         console.log("SUBMIT");
 
-        if (txt_q.val() == "") {
+        if (txt_q.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_v.val())) {
             a = calcA(Number(txt_di.val()) * basefac_di);
             q = a * Number(txt_v.val()) * basefac_v;
             txt_q.val(q / basefac_q);
-        } else if (txt_di.val() == "") {
+        } else if (txt_di.val() == "" && $.isNumeric(txt_v.val()) && $.isNumeric(txt_q.val())) {
             a = (Number(txt_q.val()) * basefac_q) / (Number(txt_v.val()) * basefac_v);
             di = Math.sqrt(a * 4 / Math.PI);
             txt_di.val(di / basefac_di);
-        } else if (txt_v.val() == "") {
+        } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
             a = calcA(Number(txt_di.val()) * basefac_di);
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(v / basefac_v);
         } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger'><a class='uk-alert-close' uk-close></a><h3>Fehlerhafte Eingabe</h3><p>Für eine Berechnung werden genau zwei Eingabewerte benötigt!</p></div>");
+            $('#content').prepend("<div uk-alert class='uk-alert-danger'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten.</p></div>");
         }
     });
 
