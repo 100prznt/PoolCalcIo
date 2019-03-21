@@ -60,72 +60,76 @@
                     <label><input class="uk-radio" type="radio" name="quader"> Quader (Rechteck)</label>
                     <label><input class="uk-radio" type="radio" name="volumen"> Volumenangabe</label>
                 </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Volumen</div>
+                <div>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Volumen</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                            <input class="uk-input" type="number" step=any name="v">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_v">
+                            <option value="0.001">l</option>
+                            <option value="1" selected>m³</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                        <input class="uk-input" type="number" step=any name="v">
+                <div>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Durchmesser</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="d">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_di">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_v">
-                        <option value="0.001">l</option>
-                        <option value="1" selected>m³</option>
-                    </select>
+                <div>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Länge</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="a">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_a">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Durchmesser</div>
+                <div>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Breite</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="b">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_b">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="d">
+                <div>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Tiefe</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="t">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_t">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.01">cm</option>
-                        <option value="1" selected>m</option>
-                    </select>
-                </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Länge</div>
-                </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="a">
-                </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_a">
-                        <option value="0.01">cm</option>
-                        <option value="1" selected>m</option>
-                    </select>
-                </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Breite</div>
-                </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="b">
-                </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_b">
-                        <option value="0.01">cm</option>
-                        <option value="1" selected>m</option>
-                    </select>
-                </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Tiefe</div>
-                </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="t">
-                </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_t">
-                        <option value="0.01">cm</option>
-                        <option value="1" selected>m</option>
-                    </select>
-                </div>
-
                 <div class="uk-width-1-1">
                     <div class="uk-form-label">Material</div>
                 </div>
@@ -198,7 +202,7 @@
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(Math.round(v / basefac_v * 100) / 100);
         } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
     });
 
