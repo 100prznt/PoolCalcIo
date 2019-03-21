@@ -166,7 +166,6 @@
             </form>
         </div>
         <div class="uk-card-footer">
-
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
                     <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@sandym10" target="_blank">Sandy Millar</a> on Unsplash.</p>
@@ -183,6 +182,7 @@
         $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")")
     });
 
+    var radio_form = $("input[name=form]").first();
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
     var txt_v = $("input[name=v]").first();
@@ -205,6 +205,10 @@
 
         $('#v').hide();
     });
+
+    radio_form.change(function () {
+        console.log("hello");
+    })
 
     sel_unit_q.change(function() {
         //to base
