@@ -102,7 +102,7 @@
 
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
-                    <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash</p>
+                    <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash.</p>
                 </div>
                 <div class="uk-width-auto">
                     <a href="https://github.com/100prznt/PoolCalcIo" target="_blank" uk-icon="icon: github"></a>
@@ -143,7 +143,7 @@
             v = Number(txt_q.val()) * basefac_q / a;
             txt_v.val(Math.round(v / basefac_v * 100) / 100);
         } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Punkt zu verwenden.</p></div>");
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
     });
 
