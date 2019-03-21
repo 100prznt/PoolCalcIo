@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>GravelCalcIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Online Rechner für ...">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2019 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, Durchmesser, Wasser, Umrechner, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Volumenstrom - Strömungsgeschwindigkeit" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Online Rechner für ..." />
+    <meta property="og:url" content="https://io.100prznt.de/" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/header_pool_og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2019-03-21T10:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-xxlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/header_pool_hiRes.jpg" alt="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img class="uk-border-circle" width="44" height="44" src="media/logo_100prznt.png"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="qvd-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Masse Schotter</div>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Form</div>
+                </div>
+                <div class="uk-width-3-5@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="radioA"> A</label>
+                    <label><input class="uk-radio" type="radio" name="radioA"> B</label>
+                    <label><input class="uk-radio" type="radio" name="radioA"> C</label>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Volumen</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="q">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001" selected>mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Durchmesser</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                    <input class="uk-input" type="number" step=any name="di">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001" selected>mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Seite a</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                    <input class="uk-input" type="number" step=any name="di">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001" selected>mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Seite b</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                    <input class="uk-input" type="number" step=any name="di">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001" selected>mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Tiefe</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                    <input class="uk-input" type="number" step=any name="di">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_di">
+                        <option value="0.001" selected>mm</option>
+                        <option value="0.01">cm</option>
+                        <option value="1">m</option>
+                    </select>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Material</div>
+                </div>
+                <div class="uk-width-3-5@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="radioA"> Schotter</label>
+                    <label><input class="uk-radio" type="radio" name="radioA"> Splitt</label>
+                    <label><input class="uk-radio" type="radio" name="radioA"> Sand</label>
+                </div>
+
+                <div class="uk-width-2-5@m uk-width-1-1">
+                    <div class="uk-form-label">Masse</div>
+                </div>
+                <div class="uk-width-2-5@m uk-width-1-2">
+                    <input class="uk-input" type="number" step=any name="v">
+                </div>
+                <div class="uk-width-1-5@m uk-width-1-2">
+                    <select class="uk-select" name="unit_v">
+                        <option value="0.01">cm/s</option>
+                        <option value="1" selected>m/s</option>
+                        <option value="0.27777777778">km/h</option>
+                    </select>
+                </div>
+                <div class="uk-width-1-1">
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt/PoolCalcIo" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")")
+    });
+
+    var txt_q = $("input[name=q]").first();
+    var txt_di = $("input[name=di]").first();
+    var txt_v = $("input[name=v]").first();
+    var sel_unit_q = $("select[name=unit_q]").first();
+    var sel_unit_di = $("select[name=unit_di]").first();
+    var sel_unit_v = $("select[name=unit_v]").first();
+    var basefac_q = sel_unit_q.children("option").filter(":selected").val();
+    var basefac_di = sel_unit_di.children("option").filter(":selected").val();
+    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
+
+    $('#qvd-calc').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').remove();
+
+        if (txt_q.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_v.val())) {
+            a = calcA(Number(txt_di.val()) * basefac_di);
+            q = a * Number(txt_v.val()) * basefac_v;
+            txt_q.val(Math.round(q / basefac_q * 100) / 100);
+        } else if (txt_di.val() == "" && $.isNumeric(txt_v.val()) && $.isNumeric(txt_q.val())) {
+            a = (Number(txt_q.val()) * basefac_q) / (Number(txt_v.val()) * basefac_v);
+            di = Math.sqrt(a * 4 / Math.PI);
+            txt_di.val(Math.round(di / basefac_di * 100) / 100);
+        } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
+            a = calcA(Number(txt_di.val()) * basefac_di);
+            v = Number(txt_q.val()) * basefac_q / a;
+            txt_v.val(Math.round(v / basefac_v * 100) / 100);
+        } else {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        }
+    });
+
+    sel_unit_q.change(function() {
+        //to base
+        q_base = Number(txt_q.val()) * basefac_q;
+        //get new basefac
+        basefac_q = sel_unit_q.children("option").filter(":selected").val();
+        //to specific unit
+        txt_q.val(Math.round(q_base / basefac_q * 100) / 100);
+    });
+
+    sel_unit_di.change(function() {
+        //to base
+        di_base = Number(txt_di.val()) * basefac_di;
+        //get new basefac
+        basefac_di = sel_unit_di.children("option").filter(":selected").val();
+        //to specific unit
+        txt_di.val(Math.round(di_base / basefac_di * 100) / 100);
+    });
+
+    sel_unit_v.change(function() {
+        //to base
+        v_base = Number(txt_v.val()) * basefac_v;
+        //get new basefac
+        basefac_v = sel_unit_v.children("option").filter(":selected").val();
+        //to specific unit
+        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
+    });
+
+    function calcA(diameter) {
+        return Math.pow(diameter, 2) * Math.PI / 4;
+    }
+</script>
+</body>
+</html>
