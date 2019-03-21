@@ -33,7 +33,7 @@
 <div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
     <div class="uk-card uk-card-default uk-width-xxlarge@m uk-height-viewport@m uk-align-center">
         <div class="uk-card-media-top">
-            <img src="media/header_pool_hiRes.jpg" alt="Photo by Tom Grimbert (@tomgrimbert) on Unsplash">
+            <img src="media/header_digger_hiRes.jpg" alt="Photo by Sandy Millar (@sandym10) on Unsplash">
         </div>
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -56,22 +56,21 @@
                     <div class="uk-form-label">Form</div>
                 </div>
                 <div class="uk-width-3-5@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="radioA"> A</label>
-                    <label><input class="uk-radio" type="radio" name="radioA"> B</label>
-                    <label><input class="uk-radio" type="radio" name="radioA"> C</label>
+                    <label><input class="uk-radio" type="radio" name="round"> Zylinder (Rund)</label>
+                    <label><input class="uk-radio" type="radio" name="quader"> Quader (Rechteck)</label>
+                    <label><input class="uk-radio" type="radio" name="volumen"> Volumenangabe</label>
                 </div>
 
                 <div class="uk-width-2-5@m uk-width-1-1">
                     <div class="uk-form-label">Volumen</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                        <input class="uk-input" type="number" step=any name="q">
+                        <input class="uk-input" type="number" step=any name="v">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
-                        <option value="0.01">cm</option>
-                        <option value="1">m</option>
+                    <select class="uk-select" name="unit_v">
+                        <option value="0.001">l</option>
+                        <option value="1" selected>m³</option>
                     </select>
                 </div>
 
@@ -79,41 +78,38 @@
                     <div class="uk-form-label">Durchmesser</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="di">
+                    <input class="uk-input" type="number" step=any name="d">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
                     <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
                         <option value="0.01">cm</option>
-                        <option value="1">m</option>
+                        <option value="1" selected>m</option>
                     </select>
                 </div>
 
                 <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Seite a</div>
+                    <div class="uk-form-label">Länge</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="di">
+                    <input class="uk-input" type="number" step=any name="a">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
+                    <select class="uk-select" name="unit_a">
                         <option value="0.01">cm</option>
-                        <option value="1">m</option>
+                        <option value="1" selected>m</option>
                     </select>
                 </div>
 
                 <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Seite b</div>
+                    <div class="uk-form-label">Breite</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="di">
+                    <input class="uk-input" type="number" step=any name="b">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
+                    <select class="uk-select" name="unit_b">
                         <option value="0.01">cm</option>
-                        <option value="1">m</option>
+                        <option value="1" selected>m</option>
                     </select>
                 </div>
 
@@ -121,13 +117,12 @@
                     <div class="uk-form-label">Tiefe</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="di">
+                    <input class="uk-input" type="number" step=any name="t">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
+                    <select class="uk-select" name="unit_t">
                         <option value="0.01">cm</option>
-                        <option value="1">m</option>
+                        <option value="1" selected>m</option>
                     </select>
                 </div>
 
@@ -135,22 +130,21 @@
                     <div class="uk-form-label">Material</div>
                 </div>
                 <div class="uk-width-3-5@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="radioA"> Schotter</label>
-                    <label><input class="uk-radio" type="radio" name="radioA"> Splitt</label>
-                    <label><input class="uk-radio" type="radio" name="radioA"> Sand</label>
+                    <label><input class="uk-radio" type="radio" name="schotter"> Schotter (16-32)</label>
+                    <label><input class="uk-radio" type="radio" name="splitt"> Splitt</label>
+                    <label><input class="uk-radio" type="radio" name="sand"> Sand</label>
                 </div>
 
                 <div class="uk-width-2-5@m uk-width-1-1">
                     <div class="uk-form-label">Masse</div>
                 </div>
                 <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="v">
+                    <input class="uk-input" type="number" step=any name="m">
                 </div>
                 <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_v">
-                        <option value="0.01">cm/s</option>
-                        <option value="1" selected>m/s</option>
-                        <option value="0.27777777778">km/h</option>
+                    <select class="uk-select" name="unit_m">
+                        <option value="1" selected>kg</option>
+                        <option value="1000">t</option>
                     </select>
                 </div>
                 <div class="uk-width-1-1">
@@ -162,12 +156,13 @@
 
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
-                    <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash.</p>
+                    <p class="uk-text-meta">Copyright © 2019 Ruemmler, Elias All Rights Reserved. Photo by <a href="https://unsplash.com/@sandym10" target="_blank">Sandy Millar</a> on Unsplash.</p>
                 </div>
                 <div class="uk-width-auto">
                     <a href="https://github.com/100prznt/PoolCalcIo" target="_blank" uk-icon="icon: github"></a>
                 </div>
             </div>
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F2312463712376523%2Fvideos%2F2476242649113199%2F&show_text=0&width=380" width="380" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
         </div>
     </div>
 </div>
