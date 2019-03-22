@@ -231,8 +231,10 @@
             default:
 
                 break;
+
         }
 
+        txt_m.Val("");
 
         if (v > 0) {
             m = v * density_mat;
@@ -355,11 +357,11 @@
 
     sel_unit_m.change(function() {
         //to base
-        m_base = Number(txt_m.val()) * basefac_v;
+        m_base = Number(txt_m.val()) * basefac_m;
         //get new basefac
         basefac_m = sel_unit_m.children("option").filter(":selected").val();
         //to specific unit
-        txt_m.val(Math.round(v_base / basefac_m * 100) / 100);
+        txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
     });
 
     function calcA(diameter) {
