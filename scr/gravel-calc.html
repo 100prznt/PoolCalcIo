@@ -234,8 +234,6 @@
 
         }
 
-        txt_m.Val("");
-
         if (v > 0) {
             m = v * density_mat;
             txt_m.val(Math.round(m / basefac_m * 100) / 100);
@@ -285,6 +283,8 @@
                 $('#t').hide();
                 break;
         }
+
+        txt_m.Val("");
     });
 
     radio_mat.change(function () {
@@ -308,6 +308,8 @@
                 console.log("default");
                 break;
         }
+
+        txt_m.Val("");
     });
 
     sel_unit_a.change(function() {
