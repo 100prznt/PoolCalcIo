@@ -209,15 +209,17 @@
     radio_shape.change(function () {
         console.log("shape changed");
 
+        var test = $("input[name=shape]:checked").val();
+
         switch ($("input[name=shape]:checked").val()) {
-            case 1:
+            case "1":
                 console.log("1");
                 break;
-            case 2:
-                console.log("1");
+            case "2":
+                console.log("2");
                 break;
-            case 3:
-                console.log("1");
+            case "3":
+                console.log("3");
                 break;
             default:
                 console.log("default");
