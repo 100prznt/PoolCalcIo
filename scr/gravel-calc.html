@@ -236,7 +236,7 @@
 
         if (v > 0) {
             m = v * density_mat;
-            txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
+            txt_m.val(Math.round(m / basefac_m * 100) / 100);
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
