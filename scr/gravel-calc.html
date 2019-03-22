@@ -155,8 +155,8 @@
                     </div>
                     <div class="uk-width-1-5@m uk-width-1-2">
                         <select class="uk-select" name="unit_m">
-                            <option value="1" selected>kg</option>
-                            <option value="1000">t</option>
+                            <option value="1">kg</option>
+                            <option value="1000" selected>t</option>
                         </select>
                     </div>
                 </div>
@@ -181,6 +181,8 @@
     $.getJSON( "version.json", function( data ) {
         $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")")
     });
+
+    setZylinder();
 
     var radio_shape = $("input[name=shape]");
     var radio_mat = $("input[name=mat]");
@@ -349,6 +351,15 @@
         basefac_v = sel_unit_v.children("option").filter(":selected").val();
         //to specific unit
         txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
+    });
+
+    sel_unit_m.change(function() {
+        //to base
+        m_base = Number(txt_m.val()) * basefac_v;
+        //get new basefac
+        basefac_m = sel_unit_m.children("option").filter(":selected").val();
+        //to specific unit
+        txt_m.val(Math.round(v_base / basefac_m * 100) / 100);
     });
 
     function calcA(diameter) {
