@@ -56,7 +56,7 @@
                     <div class="uk-form-label">Form</div>
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="shape" value="1"> Zylinder (Rund)</label>
+                    <label><input class="uk-radio" type="radio" name="shape" value="1" checked> Zylinder (Rund)</label>
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1">
                     <label><input class="uk-radio" type="radio" name="shape" value="2"> Quader (Rechteck)</label>
@@ -64,7 +64,7 @@
                 <div class="uk-width-1-3@m uk-width-1-1">
                     <label><input class="uk-radio" type="radio" name="shape" value="3"> Volumenangabe</label>
                 </div>
-                <div class="uk-width-1-1 uk-grid-small" uk-grid id="v">
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="v" hidden>
                     <div class="uk-width-2-5@m uk-width-1-1">
                         <div class="uk-form-label">Volumen</div>
                     </div>
@@ -92,7 +92,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="uk-width-1-1 uk-grid-small" uk-grid id="a">
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="a" hidden>
                     <div class="uk-width-2-5@m uk-width-1-1">
                         <div class="uk-form-label">Länge</div>
                     </div>
@@ -106,7 +106,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="uk-width-1-1 uk-grid-small" uk-grid id="b">
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="b" hidden>
                     <div class="uk-width-2-5@m uk-width-1-1">
                         <div class="uk-form-label">Breite</div>
                     </div>
@@ -138,13 +138,13 @@
                     <div class="uk-form-label">Material</div>
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="mat"> Schotter (16-32)</label>
+                    <label><input class="uk-radio" type="radio" name="mat" value="1" checked> Splitt (16-32)</label>
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="mat"> Splitt</label>
+                    <label><input class="uk-radio" type="radio" name="mat" value="2"> Splitt (2-4)</label>
                 </div>
                 <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="mat"> Sand</label>
+                    <label><input class="uk-radio" type="radio" name="mat" value="3"> Sand</label>
                 </div>
                 <div class="uk-width-1-1 uk-grid-small" uk-grid id="m">
                     <div class="uk-width-2-5@m uk-width-1-1">
@@ -183,6 +183,7 @@
     });
 
     var radio_shape = $("input[name=shape]");
+    var radio_mat = $("input[name=mat]");
     var txt_q = $("input[name=q]").first();
     var txt_di = $("input[name=di]").first();
     var txt_v = $("input[name=v]").first();
@@ -192,6 +193,7 @@
     var basefac_q = sel_unit_q.children("option").filter(":selected").val();
     var basefac_di = sel_unit_di.children("option").filter(":selected").val();
     var basefac_v = sel_unit_v.children("option").filter(":selected").val();
+    var density_mat = 1480;
 
     $('#qvd-calc').on('submit', function(e){
         e.preventDefault();
@@ -206,8 +208,6 @@
 
     radio_shape.change(function () {
         console.log("shape changed");
-
-        var test = $("input[name=shape]:checked").val();
 
         switch ($("input[name=shape]:checked").val()) {
             case "1": //zylinder
@@ -243,7 +243,30 @@
                 $('#t').hide();
                 break;
         }
-    })
+    });
+
+    radio_mat.change(function () {
+        console.log("material changed");
+
+        //daten von: https://www.baustoffe-liefern.de/Rechner/Splitt.html
+        switch ($("input[name=mat]:checked").val()) {
+            case "1": //Basalt-Splitt
+                console.log("schotter");
+                density_mat = 1480;
+                break;
+            case "2": //Splitt 2-4
+                console.log("splitt");
+                density_mat = 1345;
+                break;
+            case "3": //sand
+                console.log("sand");
+                density_mat = 1520;
+                break;
+            default:
+                console.log("default");
+                break;
+        }
+    });
 
     sel_unit_q.change(function() {
         //to base
