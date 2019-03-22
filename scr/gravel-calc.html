@@ -202,8 +202,6 @@
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
-
-        $('#v').hide();
     });
 
     radio_shape.change(function () {
@@ -212,17 +210,37 @@
         var test = $("input[name=shape]:checked").val();
 
         switch ($("input[name=shape]:checked").val()) {
-            case "1":
-                console.log("1");
+            case "1": //zylinder
+                console.log("zylinder");
+                $('#v').hide();
+                $('#a').hide();
+                $('#b').hide();
+                $('#d').show();
+                $('#t').show();
                 break;
-            case "2":
-                console.log("2");
+            case "2": //quader
+                console.log("quader");
+                $('#v').hide();
+                $('#a').show();
+                $('#b').show();
+                $('#d').hide();
+                $('#t').show();
                 break;
-            case "3":
-                console.log("3");
+            case "3": //volumen
+                console.log("volumen");
+                $('#v').show();
+                $('#a').hide();
+                $('#b').hide();
+                $('#d').hide();
+                $('#t').hide();
                 break;
             default:
                 console.log("default");
+                $('#v').hide();
+                $('#a').hide();
+                $('#b').hide();
+                $('#d').hide();
+                $('#t').hide();
                 break;
         }
     })
