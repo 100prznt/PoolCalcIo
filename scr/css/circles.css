@@ -1,5 +1,5 @@
 .circle {
-    width: 130px;
+    width: 100px;
     margin: 6px 6px 20px;
     display: inline-block;
     position: relative;
@@ -13,12 +13,12 @@
 
 .circle strong {
     position: absolute;
-    top: 45px;
+    top: 30px;
     left: 0;
     width: 100%;
     text-align: center;
     line-height: 40px;
-    font-size: 32px;
+    font-size: 25px;
 }
 
 .circle strong i {
