@@ -117,7 +117,8 @@
 </div>
 <script>
     $.getJSON( "version.json", function( data ) {
-        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")")
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
     });
 
     var txt_q = $("input[name=q]").first();
