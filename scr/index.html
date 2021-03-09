@@ -90,8 +90,8 @@
                     <select class="uk-select" name="unit_v">
                         <option value="0.01">cm/s</option>
                         <option value="1" selected>m/s</option>
-                        <option value="3600">m/h</option>
-                        <option value="3600000">km/h</option>
+                        <option value="2.77777777778E-4">m/h</option>
+                        <option value="2.77777777778E-7">km/h</option>
                     </select>
                 </div>
                 <div class="uk-width-1-1">
@@ -144,11 +144,13 @@
             di = Math.sqrt(a * 4 / Math.PI);
             txt_di.val(Math.round(di / basefac_di * 100) / 100);
         } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
-            a = calcA(Number(txt_di.val()) * basefac_di);
-            console.log(a);
+            d = Number(txt_di.val()) * basefac_di;
+            //console.log("d = " + d + " m");
+            a = calcA(d);
+            //console.log("A = " + a + " m^2");
             v = Number(txt_q.val()) * basefac_q / a;
-            console.log(v);
-            txt_v.val(Math.round(v / basefac_v * 100) / 100);
+            //console.log("v = " + v + " m/s");
+            txt_v.val(Math.round(v / basefac_v * 1000) / 1000);
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
@@ -178,7 +180,7 @@
         //get new basefac
         basefac_v = sel_unit_v.children("option").filter(":selected").val();
         //to specific unit
-        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
+        txt_v.val(Math.round(v_base / basefac_v * 1000) / 1000);
     });
 
     function calcA(diameter) {
