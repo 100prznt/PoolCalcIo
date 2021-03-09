@@ -145,7 +145,9 @@
             txt_di.val(Math.round(di / basefac_di * 100) / 100);
         } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
             a = calcA(Number(txt_di.val()) * basefac_di);
+            console.log(a);
             v = Number(txt_q.val()) * basefac_q / a;
+            console.log(v);
             txt_v.val(Math.round(v / basefac_v * 100) / 100);
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
