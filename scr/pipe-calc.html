@@ -56,10 +56,10 @@
                     <div class="uk-form-label">Rohrleitungstyp (Rauheit k)</div>
                 </div>
                 <div class="uk-width-1-2@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="k" value="0.1" checked> PVC Flex/Rohr (k = 0,1 mm)</label>
+                    <label><input class="uk-radio" type="radio" name="k" value="pvc" checked> PVC Flex/Rohr (k = 0,1 mm)</label>
                 </div>
                 <div class="uk-width-1-2@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="k" value="2"> Geriffelter Poolschlauch (k = 2 mm)</label>
+                    <label><input class="uk-radio" type="radio" name="k" value="riffel"> Geriffelter Poolschlauch (k = 2 mm)</label>
                 </div>
                 <!--<div class="uk-width-1-1 uk-grid-small uk-margin-top" uk-grid id="v">
                     <div class="uk-width-2-5@m uk-width-1-1">
@@ -104,8 +104,25 @@
                         </select>
                     </div>
                 </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="q">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Volumenstrom</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="q">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_q">
+                            <option value="1">m^3/s</option>
+                            <option value="2.77777777778E-4" selected>m^3/h</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="uk-width-1-1 uk-grid-small" uk-grid>
                     <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+                <div>
+                    Ergebnisse
                 </div>
                 <div class="uk-width-1-1 uk-grid-small" uk-grid id="p">
                     <div class="uk-width-2-5@m uk-width-1-1">
@@ -145,63 +162,104 @@
         $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
     });
 
-    /*setZylinder();
+    //setZylinder();
 
     var radio_shape = $("input[name=shape]");
     var radio_mat = $("input[name=mat]");
-    var txt_a = $("input[name=a]").first();
+    var txt_p = $("input[name=p]").first();
     var txt_b = $("input[name=b]").first();
     var txt_d = $("input[name=d]").first();
-    var txt_t = $("input[name=t]").first();
+    var txt_l = $("input[name=l]").first();
     var txt_v = $("input[name=v]").first();
-    var txt_m = $("input[name=m]").first();
-    var sel_unit_a = $("select[name=unit_a]").first();
+    var txt_q = $("input[name=q]").first();
+    var sel_unit_p = $("select[name=unit_p]").first();
     var sel_unit_b = $("select[name=unit_b]").first();
     var sel_unit_d = $("select[name=unit_d]").first();
-    var sel_unit_t = $("select[name=unit_t]").first();
+    var sel_unit_l = $("select[name=unit_l]").first();
     var sel_unit_v = $("select[name=unit_v]").first();
-    var sel_unit_m = $("select[name=unit_m]").first();
-    var basefac_a = sel_unit_a.children("option").filter(":selected").val();
+    var sel_unit_q = $("select[name=unit_q]").first();
+    var basefac_p = sel_unit_p.children("option").filter(":selected").val();
     var basefac_b = sel_unit_b.children("option").filter(":selected").val();
     var basefac_d = sel_unit_d.children("option").filter(":selected").val();
-    var basefac_t = sel_unit_t.children("option").filter(":selected").val();
+    var basefac_l = sel_unit_l.children("option").filter(":selected").val();
     var basefac_v = sel_unit_v.children("option").filter(":selected").val();
-    var basefac_m = sel_unit_m.children("option").filter(":selected").val();
+    var basefac_q = sel_unit_q.children("option").filter(":selected").val();
     var density_mat = 1480;
 
     $('#qvd-calc').on('submit', function(e){
         e.preventDefault();
         $('#alert').remove();
 
-        var v = 0;
+        var q = Number(txt_q.val()) * basefac_q;
+        var d = Number(txt_d.val()) * basefac_d;
+        var l = Number(txt_l.val()) * basefac_l;
 
-        switch ($("input[name=shape]:checked").val()) {
-            case "1": //zylinder
-                d = Number(txt_d.val()) * basefac_d;
-                t = Number(txt_t.val()) * basefac_t;
-                v = calcA(d) * t;
-                break;
-            case "2": //quader
-                a = Number(txt_a.val()) * basefac_a;
-                b = Number(txt_b.val()) * basefac_b;
-                t = Number(txt_t.val()) * basefac_t;
-                v = a * b * t;
+        console.log("Q = " + q + " m^3/s");
+        console.log("d = " + d + " m");
+        console.log("l = " + l + " m");
 
+
+        var a = calcA(d);
+        var k = 0;
+
+        switch ($("input[name=k]:checked").val()) {
+            case "pvc":
+                k = 0.0001;
                 break;
-            case "3": //volumen
-                v = Number(txt_v.val()) * basefac_v;
+            case "riffel":
+                k = 0.002;
                 break;
             default:
-
                 break;
         }
 
-        if (v > 0) {
-            m = v * density_mat;
-            txt_m.val(Math.round(m / basefac_m * 100) / 100);
-        } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        console.log("A = " + a + " m^2");
+        console.log("k = " + k + " m");
+
+        var v = q / a;
+
+        console.log("v = " + v + " m/s");
+
+
+        var kv = 0.893 / 1E6; // [m^2/s]
+        var re = v * d / kv;
+
+        // Rohrreibungszahl (Lambda) nach Colebrook und White siehe: https://de.wikipedia.org/wiki/Rohrreibungszahl
+        // Iterative Berechnung
+        var lambda = 0.005; // Startwert für Lambda
+        var s = 0.001; // Schrittweite für Antastung
+        var i = 7; // Anzahl der Richtungswechsel
+
+        var error = Number.MAX_VALUE - 1;
+        var lastError = Number.MAX_VALUE;
+        while (i > 0)
+        {
+            lastError = error;
+            error = 1 / Math.sqrt(lambda) - (-2 * Math.log10((2.51 / (re * Math.sqrt(lambda))) + (k / (3.71 * d))));
+
+            if (Math.abs(error) >= Math.abs(lastError))
+            {
+                s /= -10;
+                i--;
+            }
+            lambda += s;
         }
+
+
+        // Druckverlust durch Rohrreibung
+        // https://www.schweizer-fn.de/stroemung/druckverlust/druckverlust.php#druckverlustrohr
+        var deltaP = lambda * l * 997.05 * Math.pow(v, 2) / (d * 2); // [Pa]
+
+        var deltaP_Bar = deltaP / 1E5;
+
+
+        console.log("p = " + deltaP_Bar + " bar");
+
+        txt_p.val(deltaP_Bar * 1000);
+
+        //if (v <= 0) {
+        //    $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        //}
     });
 
     function setZylinder() {
@@ -327,7 +385,7 @@
         //to specific unit
         txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
     });
-    */
+    
 
     function calcA(diameter) {
         return Math.pow(diameter, 2) * Math.PI / 4;
