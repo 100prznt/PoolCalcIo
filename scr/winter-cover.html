@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>WinterCoverIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Berechnung der Größe einer Abdeckplane">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2021 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, Durchmesser, Wasser, Umrechner, Siloplane, Silofolie, Volumen, Winterplane, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Planengröße berechnen" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Berechnung der Größe einer Abdeckplane" />
+    <meta property="og:url" content="https://io.100prznt.de/winter-cover.html" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/winter-cover-dwg.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2019-03-21T10:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-2xlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/winter-cover-dwg.png" alt="Graphic by Elias Ruemmler">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img class="uk-border-circle" width="44" height="44" src="media/logo_100prznt.png"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="winter-cover">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Berechnung der Größe einer Abdeckplane</div>
+                    <p>Mit diesem Rechner kann die Größe einer Abdeckplane, zur kompletten Abdeckung eines freistehenden Pools, berechnet werden. Die Folie reicht dabei, wie in der Grafik dargestellt, vom Boden an über den kompletten Pool.</p>
+                </div>
+
+                <div class="uk-width-1-1">
+                    <div class="uk-form-label">Form</div>
+                </div>
+                <div class="uk-width-1-3@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="shape" value="1" checked> Rund-Pool</label>
+                </div>
+                <div class="uk-width-1-3@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="shape" value="2"> Rechteck-Pool</label>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="d">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Durchmesser</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="d">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_d">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="a">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Länge</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="a">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_a">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="b">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Breite</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="b">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_b">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="t">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Poolhöhe</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="t">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_t">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="w">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Wasserstand</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="w">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_w">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="uk-width-1-1 uk-grid-small" uk-grid>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2021</span> Ruemmler, Elias all rights reserved.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
+                    <!--<a href="https://www.facebook.com/100prznt/" target="_blank" uk-icon="icon: facebook"></a>
+                    <a href="https://100prznt.de/" target="_blank" uk-icon="icon: world"></a>-->
+                    <a href="https://github.com/100prznt/PoolCalcIo/" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    });
+
+    setZylinder();
+
+    var radio_shape = $("input[name=shape]");
+    var txt_a = $("input[name=a]").first();
+    var txt_b = $("input[name=b]").first();
+    var txt_d = $("input[name=d]").first();
+    var txt_t = $("input[name=t]").first();
+    var txt_w = $("input[name=w]").first();
+    var sel_unit_a = $("select[name=unit_a]").first();
+    var sel_unit_b = $("select[name=unit_b]").first();
+    var sel_unit_d = $("select[name=unit_d]").first();
+    var sel_unit_t = $("select[name=unit_t]").first();
+    var sel_unit_w = $("select[name=unit_w]").first();
+    var basefac_a = sel_unit_a.children("option").filter(":selected").val();
+    var basefac_b = sel_unit_b.children("option").filter(":selected").val();
+    var basefac_d = sel_unit_d.children("option").filter(":selected").val();
+    var basefac_t = sel_unit_t.children("option").filter(":selected").val();
+    var basefac_w = sel_unit_w.children("option").filter(":selected").val();
+
+    $('#winter-cover').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').remove();
+        $('#result').remove();
+
+        console.log("start calc");
+
+        t = Number(txt_t.val()) * basefac_t;
+        w = Number(txt_w.val()) * basefac_w;
+
+        console.log("inputs");
+        console.log(t);
+        console.log(w);
+
+        var x = 0;
+        var y = 0;
+
+        switch ($("input[name=shape]:checked").val()) {
+            case "1": //zylinder
+                d = Number(txt_d.val()) * basefac_d;
+
+                x = 2 * (2 * t - w) + d
+                y = x;
+        		console.log("results");
+        		console.log(x);
+                break;
+            case "2": //quader
+                a = Number(txt_a.val()) * basefac_a;
+                b = Number(txt_b.val()) * basefac_b;
+
+                x = 2 * (2 * t - w) + a;
+                y = 2 * (2 * t - w) + b;
+        		console.log("results");
+        		console.log(x);
+        		console.log(y);
+            default:
+
+                break;
+        }
+
+        if (x > 0) {
+            //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Die Abdeckplane sollte eine Größe von <strong>" + Math.round(x * 100) / 100 + " x " + Math.round(y * 100) / 100 + " m</strong> haben.</div></div>");
+        } else {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        }
+    });
+
+    function setZylinder() {
+        $('#a').hide();
+        $('#b').hide();
+        $('#d').show();
+    }
+
+    radio_shape.change(function () {
+        console.log("shape changed");
+
+        switch ($("input[name=shape]:checked").val()) {
+            case "1": //zylinder
+                console.log("zylinder");
+                setZylinder();
+                break;
+            case "2": //quader
+                console.log("quader");
+                $('#a').show();
+                $('#b').show();
+                $('#d').hide();
+                break;
+            default:
+                console.log("default");
+                $('#a').hide();
+                $('#b').hide();
+                $('#d').hide();
+                break;
+        }
+
+        txt_m.val("");
+    });
+
+    sel_unit_a.change(function() {
+        //to base
+        a_base = Number(txt_a.val()) * basefac_a;
+        //get new basefac
+        basefac_a = sel_unit_a.children("option").filter(":selected").val();
+        //to specific unit
+        txt_a.val(Math.round(a_base / basefac_a * 100) / 100);
+    });
+
+    sel_unit_b.change(function() {
+        //to base
+        b_base = Number(txt_b.val()) * basefac_b;
+        //get new basefac
+        basefac_b = sel_unit_b.children("option").filter(":selected").val();
+        //to specific unit
+        txt_b.val(Math.round(b_base / basefac_b * 100) / 100);
+    });
+
+    sel_unit_d.change(function() {
+        //to base
+        d_base = Number(txt_d.val()) * basefac_d;
+        //get new basefac
+        basefac_d = sel_unit_d.children("option").filter(":selected").val();
+        //to specific unit
+        txt_d.val(Math.round(d_base / basefac_d * 100) / 100);
+    });
+
+    sel_unit_t.change(function() {
+        //to base
+        t_base = Number(txt_t.val()) * basefac_t;
+        //get new basefac
+        basefac_t = sel_unit_t.children("option").filter(":selected").val();
+        //to specific unit
+        txt_t.val(Math.round(t_base / basefac_t * 100) / 100);
+    });
+
+    sel_unit_w.change(function() {
+        //to base
+        w_base = Number(txt_w.val()) * basefac_w;
+        //get new basefac
+        basefac_w = sel_unit_w.children("option").filter(":selected").val();
+        //to specific unit
+        txt_w.val(Math.round(w_base / basefac_w * 100) / 100);
+    });
+
+    function calcA(diameter) {
+        return Math.pow(diameter, 2) * Math.PI / 4;
+    }
+</script>
+</body>
+</html>
