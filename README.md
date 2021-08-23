@@ -9,3 +9,4 @@ Online Rechner für Volumenstrom, Rohrinnendurchmesser und Strömungsgeschwindig
 
 * [Volumenstrom - Strömungsgeschwindigkeit](http://io.100prznt.de/)
 * [Masserechner für Splitt und Sand](http://io.100prznt.de/gravel-calc.html)
+* [Berechnung der Größe einer Abdeckplane](http://io.100prznt.de/winter-cover.html)
