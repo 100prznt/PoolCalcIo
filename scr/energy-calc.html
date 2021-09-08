@@ -173,7 +173,7 @@
 
         if (e_c > 0) {
             //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
-            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table><tr><th>Zeitspanne</th><th>Stromverbrauch</th><th>Kosten</th></tr><tr><td>Woche</td><td>" + q_w + " kWh</td><td>" + e_w + " EUR</td></tr><tr><td>Jahr</td><td>" + q_y + " kWh</td><td>" + e_y + " EUR</td></tr></table></div></div>");
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table><tr><th>Zeitraum</th><th>Stromverbrauch</th><th>Kosten</th></tr><tr><td>Tag</td><td>" + q_d + " kWh</td><td>" + e_d + " EUR</td></tr>tr><td>Woche</td><td>" + q_w + " kWh</td><td>" + e_w + " EUR</td></tr><tr><td>Jahr</td>tr><td>Monat</td><td>" + q_m + " kWh</td><td>" + e_m + " EUR</td></tr><td>" + q_y + " kWh</td><td>" + e_y + " EUR</td></tr></table></div></div>");
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
