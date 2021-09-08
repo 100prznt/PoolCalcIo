@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
 <head>
-    <title>WinterCoverIo</title>
+    <title>EnergyCalcIo</title>
     <meta charset="utf-8">
     <meta name="description" content="Berechnung der Stromkosten">
     <meta name="author" content="Ruemmler, Elias" />
@@ -151,7 +151,7 @@
         console.log("start calc");
 
         var p = Number(txt_p.val()) * basefac_p;
-        var q_d = Number(txt_t_d.val()) * basefac_t_d;
+        var q_d = p * Number(txt_t_d.val()) * basefac_t_d;
         var q_w = q_d * 7;
         var q_m = q_d * 30;
         var q_y = q_d * 365;
