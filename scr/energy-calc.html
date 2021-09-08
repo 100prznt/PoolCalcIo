@@ -187,7 +187,7 @@
                 "<tr><td>Tag</td><td style='text-align: right'>" + Math.round(q_d * 100) / 100 + " kWh</td><td style='text-align: right'>" + Math.round(e_d) / 100 + " EUR</td></tr>" +
                 "<tr><td>Woche</td><td style='text-align: right'>" + Math.round(q_w * 100) / 100 + " kWh</td><td style='text-align: right'>" + Math.round(e_w) / 100 + " EUR</td></tr>" +
                 "<tr><td>Monat</td><td style='text-align: right'>" + Math.round(q_m * 100) / 100 + " kWh</td><td style='text-align: right'>" + Math.round(e_m) / 100 + " EUR</td></tr>" +
-                "<tr><td>Jahr</td><td style='text-align: right'>" + Math.round(q_c * 100) / 100 + " kWh</td><td style='text-align: right'>" + Math.round(e_c) / 100 + " EUR</td></tr>" +
+                "<tr><td>Jahr</td><td style='text-align: right'>" + q_c.toFixed(2) + " kWh</td><td style='text-align: right'>" + Math.round(e_c) / 100 + " EUR</td></tr>" +
                 "</table></div></div>");
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
