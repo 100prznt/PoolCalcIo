@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>WinterCoverIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Berechnung der Stromkosten">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2021 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Berechnung der Stromkosten" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Berechnung der Stromkosten." />
+    <meta property="og:url" content="https://io.100prznt.de/energy-calc.html" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/thomas-kelley-xVptEZzgVfo-unsplash.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2019-03-21T10:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-2xlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/thomas-kelley-xVptEZzgVfo-unsplash.jpg" alt="Photo by Thomas Kelley (@thkelley) on Unspash">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img class="uk-border-circle" width="44" height="44" src="media/logo_100prznt.png"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">PoolCalcIo</h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="energy-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Berechnung der jährlichen Stromkosten</div>
+                    <p>Mit diesem Rechner kann ...</p>
+                </div>
+
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="p">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Leistungsaufnahme</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="p">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_p">
+                            <option value="0.001" selected>W</option>
+                            <option value="1">kW</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="t_d">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Laufzeit (täglich)</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="t_d">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_t_d">
+                            <option value="0.01666666666666666666666666666667">Minuten</option>
+                            <option value="1" selected>Stunden</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="t_y">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Laufzeit (jährlich)</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="t_y">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_t_y">
+                            <option value="0.01917808219178082191780821917808">Wochen</option>
+                            <option value="0.08333333333333333333333333333333" selected>Monate</option>
+                        </select>
+                    </div>
+                </div>   
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="e">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Arbeitspreis (Strompreis)</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="e" value="31">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        ct/kWh
+                    </div>
+                </div>          
+                <div class="uk-width-1-1 uk-grid-small" uk-grid>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2021</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@thkelley" target="_blank">Thomas Kelley</a> on Unsplash.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
+                    <!--<a href="https://www.facebook.com/100prznt/" target="_blank" uk-icon="icon: facebook"></a>
+                    <a href="https://100prznt.de/" target="_blank" uk-icon="icon: world"></a>-->
+                    <a href="https://github.com/100prznt/PoolCalcIo/" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    });
+
+    var txt_p = $("input[name=p]").first();
+    var txt_t_d = $("input[name=t_d]").first();
+    var txt_t_y = $("input[name=t_y]").first();
+    var txt_e = $("input[name=t_d]").first();
+    var sel_unit_p = $("select[name=unit_p]").first();
+    var sel_unit_t_d = $("select[name=unit_t_d]").first();
+    var sel_unit_t_y = $("select[name=unit_t_y]").first();
+    var basefac_p = sel_unit_p.children("option").filter(":selected").val();
+    var basefac_t_d = sel_unit_t_d.children("option").filter(":selected").val();
+    var basefac_t_y = sel_unit_t_y.children("option").filter(":selected").val();
+
+    $('#energy-calc').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').remove();
+        $('#result').remove();
+
+        console.log("start calc");
+
+        var p = Number(txt_p.val()) * basefac_p;
+        var q_d = Number(txt_t_d.val()) * basefac_t_d;
+        var q_w = q_d * 7;
+        var q_m = q_d * 30;
+        var q_y = q_d * 365;
+
+        var e_d = q_d * Number(txt_e.val());
+        var e_w = q_w * Number(txt_e.val());
+        var e_m = q_m * Number(txt_e.val());
+        var e_y = q_y * Number(txt_e.val());
+
+        var e_c = q_d * Number(txt_t_y.val()) * Number(txt_e.val());
+
+        console.log("inputs");
+        console.log(p);
+        console.log(q_d);
+        console.log(q_w);
+        console.log(q_m);
+        console.log(q_y);
+        
+
+        if (e_c > 0) {
+            //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>TextText</div></div>");
+        } else {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        }
+    });
+
+    sel_unit_p.change(function() {
+        //to base
+        p_base = Number(txt_p.val()) * basefac_p;
+        //get new basefac
+        basefac_p = sel_unit_p.children("option").filter(":selected").val();
+        //to specific unit
+        txt_p.val(Math.round(p_base / basefac_p * 100) / 100);
+    });
+
+    sel_unit_t_d.change(function() {
+        //to base
+        t_d_base = Number(txt_t_d.val()) * basefac_t_d;
+        //get new basefac
+        basefac_t_d = sel_unit_t_d.children("option").filter(":selected").val();
+        //to specific unit
+        txt_t_d.val(Math.round(t_d_base / basefac_t_d * 100) / 100);
+    });
+
+    sel_unit_t_y.change(function() {
+        //to base
+        t_y_base = Number(txt_t_y.val()) * basefac_t_y;
+        //get new basefac
+        basefac_t_y = sel_unit_t_y.children("option").filter(":selected").val();
+        //to specific unit
+        txt_t_y.val(Math.round(t_y_base / basefac_t_y * 100) / 100);
+    });
+</script>
+</body>
+</html>
