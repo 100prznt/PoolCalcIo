@@ -156,10 +156,10 @@
         var q_m = q_d * 30;
         var q_y = q_d * 365;
 
-        var e_d = q_d * Number(txt_e.val());
-        var e_w = q_w * Number(txt_e.val());
-        var e_m = q_m * Number(txt_e.val());
-        var e_y = q_y * Number(txt_e.val());
+        var e_d = q_d * Number(txt_e.val()) / 100;
+        var e_w = q_w * Number(txt_e.val()) / 100;
+        var e_m = q_m * Number(txt_e.val()) / 100;
+        var e_y = q_y * Number(txt_e.val()) / 100;
 
         var e_c = q_d * Number(txt_t_y.val()) * Number(txt_e.val());
 
@@ -173,7 +173,7 @@
 
         if (e_c > 0) {
             //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
-            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Es ergibt sich folgender Stromverbrauch sowie die entsprechenden Kosten:<br><table><tr><th>Zeitspanne</th><th>Stromverbrauch</th><th>Kosten</th></tr><tr><td>Woche</td><td>" + q_w + "</td><td>" + e_w + "</td></tr><tr><td>Jahr</td><td>" + q_y + "</td><td>" + e_y + "</td></tr></table></div></div>");
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table><tr><th>Zeitspanne</th><th>Stromverbrauch</th><th>Kosten</th></tr><tr><td>Woche</td><td>" + q_w + " kWh</td><td>" + e_w + " EUR</td></tr><tr><td>Jahr</td><td>" + q_y + " kWh</td><td>" + e_y + " EUR</td></tr></table></div></div>");
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
