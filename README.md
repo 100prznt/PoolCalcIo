@@ -8,3 +8,5 @@
 * [Volumenstrom - Strömungsgeschwindigkeit](http://io.100prznt.de/)
 * [Masserechner für Splitt und Sand](http://io.100prznt.de/gravel-calc.html)
 * [Berechnung der Größe einer Abdeckplane](http://io.100prznt.de/winter-cover.html)
+* [Stromkostenrechner](http://io.100prznt.de/energy-calc.html)
+* [Berechnung des Druckabfalls über Rohrleitungen](http://io.100prznt.de/pipe-calc.html)
