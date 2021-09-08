@@ -172,7 +172,13 @@
         var e_y = q_y * Number(txt_e.val()) / 100;
         var e_c = q_c * Number(txt_e.val()) / 100;
         
-        if (e_c > 0) {
+        if ((Number(txt_t_y.val()) * basefac_t_y) > 1) {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Jährliche Laufzeit darf nicht größer wie 365 Tage sein.</p></div>");
+        }
+        else if ((Number(txt_t_d.val()) * basefac_t_d) > 24) {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Tägliche Laufzeit darf nicht größer wie 24 Stunden sein.</p></div>");
+        }
+        else if (e_c > 0) {
             $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table class='uk-width-1-1'>" +
                 "<tr><th style='text-align: left'>Zeitraum</th><th></th><th  style='text-align: right'>Kosten</th></tr>" +
                 "<tr><td>Tag</td><td style='text-align: right'>" + q_d.toFixed(2) + " kWh</td><td style='text-align: right'>" + e_d.toFixed(2) + " EUR</td></tr>" +
@@ -181,7 +187,7 @@
                 "<tr><td>Jahr</td><td style='text-align: right'>" + q_c.toFixed(2) + " kWh</td><td style='text-align: right'>" + e_c.toFixed(2) + " EUR</td></tr>" +
                 "</table></div></div>");
         } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
         }
     });
 
