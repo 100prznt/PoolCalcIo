@@ -50,7 +50,7 @@
             <form class="uk-grid-small" uk-grid id="energy-calc">
                 <div class="uk-width-1-1">
                     <div class="uk-legend">Berechnung der jährlichen Stromkosten</div>
-                    <p>Mit diesem Rechner kann ...</p>
+                    <p>Mit diesem Rechner lassen sich die Stromkosten für einen Verbraucher ausrechnen, welcher tärglich in Betrieb ist.</p>
                 </div>
 
                 <div class="uk-width-1-1 uk-grid-small" uk-grid id="p">
@@ -153,7 +153,7 @@
         var p = Number(txt_p.val()) * basefac_p;
         var q_d = p * Number(txt_t_d.val()) * basefac_t_d;
         var q_w = q_d * 7;
-        var q_m = q_d * 30;
+        var q_m = q_d * 30.416666666666667;
         var q_y = q_d * 365;
         var q_c = q_d * Number(txt_t_y.val()) * basefac_t_y * 365;
 
