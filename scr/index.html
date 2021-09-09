@@ -3,16 +3,16 @@
 <head>
     <title>PoolCalcIo</title>
     <meta charset="utf-8">
-    <meta name="description" content="Online Rechner für Volumenstrom, Rohrinnendurchmesser und Strömungsgeschwindigkeit">
+    <meta name="description" content="Online Rechner für verschiedene Aufgaben rund um den Bau und Betrieb von Pools">
     <meta name="author" content="Ruemmler, Elias" />
-    <meta name="copyright" content="Copyright 2019 Ruemmler, Elias - 100prznt.de" />
-    <meta name="keywords" content="Pool, Rechnner, Volumenstrom, Strömungsgeschwindigkeit, Rohr, Durchmesser, Fließgeschwindigkeit, Durchfluss, Wasser, Umrechner, 100prznt" />
+    <meta name="copyright" content="Copyright 2021 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, 100prznt" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- og: -->
     <meta property="og:locale" content="de_DE" />
-    <meta property="og:title" content="Volumenstrom - Strömungsgeschwindigkeit" />
+    <meta property="og:title" content="PoolCalcIo" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Online Rechner für Volumenstrom, Rohrinnendurchmesser und Strömungsgeschwindigkeit" />
+    <meta property="og:description" content="Online Rechner für verschiedene Aufgaben rund um den Bau und Betrieb von Pools" />
     <meta property="og:url" content="https://io.100prznt.de/" />
     <meta property="og:site_name" content="100prznt.de" />
     <meta property="og:image" content="https://io.100prznt.de/media/header_pool_og.jpg" />
@@ -47,63 +47,70 @@
             </div>
         </div>
         <div class="uk-card-body" id="content">
-            <form class="uk-grid-small" uk-grid id="qvd-calc">
-                <div class="uk-width-1-1">
-                    <div class="uk-legend">Volumenstrom - Strömungsgeschwindigkeit</div>
+            <div class="uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+                <div class="uk-grid-item-match">
+                    <div class="uk-card uk-card-hover uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="media/header_calculator_hiRes.jpg" alt="Photo by Ray Reyes (@rareyesphoto) on Unsplash">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title">Strömungs&shy;geschwindigkeit</h3>
+                            <p>Berechnung von Strömungs&shy;geschwindigkeit, Volumenstrom und Rohr&shy;innen&shy;durchmesser. Mit dem Rechner lässt sich zum Beispiel die Filter&shy;geschwindigkeit berechnen.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="q-v-calc.html" class="uk-button uk-button-text">Zum Rechner</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Volumenstrom</div>
+                <div class="uk-grid-item-match">
+                    <div class="uk-card uk-card-hover uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="media/header_pipe_hiRes.jpg" alt="Photo by Selim Arda Eryılmaz (@selimarda) on Unsplash">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title">Druck&shy;abfall</h3>
+                            <p>Berechnung des Druck&shy;abfalls (Druck&shy;verlust) in Rohr&shy;leitungen und Schläuchen.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="pipe-calc.html" class="uk-button uk-button-text">Zum Rechner</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                        <input class="uk-input" type="number" step=any name="q">
+                <div class="uk-grid-item-match">
+                    <div class="uk-card uk-card-hover uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="media/header_voltmeter_hiRes.jpg" alt="Photo by Thomas Kelley (@thkelley) on Unspash">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title">Strom&shy;kosten</h3>
+                            <p>Rechner zur Ermittlung der Strom&shy;kosten für einen Verbraucher, welcher täglich eine feste Zeit in Betrieb ist.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="energy-calc.html" class="uk-button uk-button-text">Zum Rechner</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_q">
-                        <option value="2.777777778e-4" selected>m³/h</option>
-                        <option value="2.777777778e-7">l/h</option>
-                        <option value="1.666666667e-5">l/min</option>
-                        <option value="1">m³/s</option>
-                    </select>
+                <div class="uk-grid-item-match">
+                    <div class="uk-card uk-card-hover uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="media/header_digger_hiRes.jpg" alt="Photo by Sandy Millar (@sandym10) on Unsplash">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title">Splitt und Sand</h3>
+                            <p>Berechnung der benötigten Mengen von Splitt und Sand für den Unterbau.</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="gravel-calc.html" class="uk-button uk-button-text">Zum Rechner</a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Rohrinnendurchmesser</div>
-                </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="di">
-                </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_di">
-                        <option value="0.001" selected>mm</option>
-                        <option value="0.01">cm</option>
-                        <option value="1">m</option>
-                    </select>
-                </div>
-
-                <div class="uk-width-2-5@m uk-width-1-1">
-                    <div class="uk-form-label">Strömungsgeschwindigkeit</div>
-                </div>
-                <div class="uk-width-2-5@m uk-width-1-2">
-                    <input class="uk-input" type="number" step=any name="v">
-                </div>
-                <div class="uk-width-1-5@m uk-width-1-2">
-                    <select class="uk-select" name="unit_v">
-                        <option value="0.01">cm/s</option>
-                        <option value="1" selected>m/s</option>
-                        <option value="2.77777777778E-4">m/h</option>
-                        <option value="2.77777777778E-7">km/h</option>
-                    </select>
-                </div>
-                <div class="uk-width-1-1">
-                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
-                </div>
-            </form>
+            </div>
         </div>
         <div class="uk-card-footer">
 
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-expand">
-                    <p class="uk-text-meta">Copyright © <span id="c-year">2019</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash.</p>
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2021</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@tomgrimbert" target="_blank">Tom Grimbert</a> on Unsplash.</p>
                 </div>
                 <div class="uk-width-auto">
                     <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
@@ -120,72 +127,6 @@
         $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
         $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
     });
-
-    var txt_q = $("input[name=q]").first();
-    var txt_di = $("input[name=di]").first();
-    var txt_v = $("input[name=v]").first();
-    var sel_unit_q = $("select[name=unit_q]").first();
-    var sel_unit_di = $("select[name=unit_di]").first();
-    var sel_unit_v = $("select[name=unit_v]").first();
-    var basefac_q = sel_unit_q.children("option").filter(":selected").val();
-    var basefac_di = sel_unit_di.children("option").filter(":selected").val();
-    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
-
-    $('#qvd-calc').on('submit', function(e){
-        e.preventDefault();
-        $('#alert').remove();
-
-        if (txt_q.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_v.val())) {
-            a = calcA(Number(txt_di.val()) * basefac_di);
-            q = a * Number(txt_v.val()) * basefac_v;
-            txt_q.val(Math.round(q / basefac_q * 100) / 100);
-        } else if (txt_di.val() == "" && $.isNumeric(txt_v.val()) && $.isNumeric(txt_q.val())) {
-            a = (Number(txt_q.val()) * basefac_q) / (Number(txt_v.val()) * basefac_v);
-            di = Math.sqrt(a * 4 / Math.PI);
-            txt_di.val(Math.round(di / basefac_di * 100) / 100);
-        } else if (txt_v.val() == "" && $.isNumeric(txt_di.val()) && $.isNumeric(txt_q.val())) {
-            d = Number(txt_di.val()) * basefac_di;
-            //console.log("d = " + d + " m");
-            a = calcA(d);
-            //console.log("A = " + a + " m^2");
-            v = Number(txt_q.val()) * basefac_q / a;
-            //console.log("v = " + v + " m/s");
-            txt_v.val(Math.round(v / basefac_v * 1000) / 1000);
-        } else {
-            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Für die Berechnung müssen genau zwei Werte eingegeben werden. Ein drittes Eingabefeld darf keine Eingabe enthalten. Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
-        }
-    });
-
-    sel_unit_q.change(function() {
-        //to base
-        q_base = Number(txt_q.val()) * basefac_q;
-        //get new basefac
-        basefac_q = sel_unit_q.children("option").filter(":selected").val();
-        //to specific unit
-        txt_q.val(Math.round(q_base / basefac_q * 100) / 100);
-    });
-
-    sel_unit_di.change(function() {
-        //to base
-        di_base = Number(txt_di.val()) * basefac_di;
-        //get new basefac
-        basefac_di = sel_unit_di.children("option").filter(":selected").val();
-        //to specific unit
-        txt_di.val(Math.round(di_base / basefac_di * 100) / 100);
-    });
-
-    sel_unit_v.change(function() {
-        //to base
-        v_base = Number(txt_v.val()) * basefac_v;
-        //get new basefac
-        basefac_v = sel_unit_v.children("option").filter(":selected").val();
-        //to specific unit
-        txt_v.val(Math.round(v_base / basefac_v * 1000) / 1000);
-    });
-
-    function calcA(diameter) {
-        return Math.pow(diameter, 2) * Math.PI / 4;
-    }
 </script>
 </body>
 </html>
