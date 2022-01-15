@@ -164,27 +164,18 @@
 
     //setZylinder();
 
-    var radio_shape = $("input[name=shape]");
-    var radio_mat = $("input[name=mat]");
     var txt_p = $("input[name=p]").first();
-    var txt_b = $("input[name=b]").first();
     var txt_d = $("input[name=d]").first();
     var txt_l = $("input[name=l]").first();
-    var txt_v = $("input[name=v]").first();
     var txt_q = $("input[name=q]").first();
     var sel_unit_p = $("select[name=unit_p]").first();
-    var sel_unit_b = $("select[name=unit_b]").first();
     var sel_unit_d = $("select[name=unit_d]").first();
     var sel_unit_l = $("select[name=unit_l]").first();
-    var sel_unit_v = $("select[name=unit_v]").first();
     var sel_unit_q = $("select[name=unit_q]").first();
     var basefac_p = sel_unit_p.children("option").filter(":selected").val();
-    var basefac_b = sel_unit_b.children("option").filter(":selected").val();
     var basefac_d = sel_unit_d.children("option").filter(":selected").val();
     var basefac_l = sel_unit_l.children("option").filter(":selected").val();
-    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
     var basefac_q = sel_unit_q.children("option").filter(":selected").val();
-    var density_mat = 1480;
 
     $('#qvd-calc').on('submit', function(e){
         e.preventDefault();
@@ -262,137 +253,42 @@
         //}
     });
 
-    function setZylinder() {
-        $('#v').hide();
-        $('#a').hide();
-        $('#b').hide();
-        $('#d').show();
-        $('#t').show();
-    }
 
-    radio_shape.change(function () {
-        console.log("shape changed");
-
-        switch ($("input[name=shape]:checked").val()) {
-            case "1": //zylinder
-                console.log("zylinder");
-                setZylinder();
-                break;
-            case "2": //quader
-                console.log("quader");
-                $('#v').hide();
-                $('#a').show();
-                $('#b').show();
-                $('#d').hide();
-                $('#t').show();
-                break;
-            case "3": //volumen
-                console.log("volumen");
-                $('#v').show();
-                $('#a').hide();
-                $('#b').hide();
-                $('#d').hide();
-                $('#t').hide();
-                break;
-            default:
-                console.log("default");
-                $('#v').hide();
-                $('#a').hide();
-                $('#b').hide();
-                $('#d').hide();
-                $('#t').hide();
-                break;
-        }
-
-        txt_m.val("");
-    });
-
-    radio_mat.change(function () {
-        console.log("material changed");
-
-        //daten von: https://www.baustoffe-liefern.de/Rechner/Splitt.html
-        switch ($("input[name=mat]:checked").val()) {
-            case "1": //Basalt-Splitt
-                console.log("schotter");
-                density_mat = 1480;
-                break;
-            case "2": //Splitt 2-4
-                console.log("splitt");
-                density_mat = 1345;
-                break;
-            case "3": //sand
-                console.log("sand");
-                density_mat = 1520;
-                break;
-            default:
-                console.log("default");
-                break;
-        }
-
-        txt_m.val("");
-    });
-
-    sel_unit_a.change(function() {
-        //to base
-        a_base = Number(txt_a.val()) * basefac_a;
-        //get new basefac
-        basefac_a = sel_unit_a.children("option").filter(":selected").val();
-        //to specific unit
-        txt_a.val(Math.round(a_base / basefac_a * 100) / 100);
-    });
-
-    sel_unit_b.change(function() {
-        //to base
-        b_base = Number(txt_b.val()) * basefac_b;
-        //get new basefac
-        basefac_b = sel_unit_b.children("option").filter(":selected").val();
-        //to specific unit
-        txt_b.val(Math.round(b_base / basefac_b * 100) / 100);
-    });
 
     sel_unit_d.change(function() {
         //to base
-        d_base = Number(txt_d.val()) * basefac_d;
+        d_base = Number(txt_a.val()) * basefac_d;
         //get new basefac
         basefac_d = sel_unit_d.children("option").filter(":selected").val();
         //to specific unit
         txt_d.val(Math.round(d_base / basefac_d * 100) / 100);
     });
 
-    sel_unit_t.change(function() {
+    sel_unit_l.change(function() {
         //to base
-        t_base = Number(txt_t.val()) * basefac_t;
+        l_base = Number(txt_l.val()) * basefac_l;
         //get new basefac
-        basefac_t = sel_unit_t.children("option").filter(":selected").val();
+        basefac_l = sel_unit_l.children("option").filter(":selected").val();
         //to specific unit
-        txt_t.val(Math.round(t_base / basefac_t * 100) / 100);
+        txt_l.val(Math.round(l_base / basefac_l * 100) / 100);
     });
 
-    sel_unit_v.change(function() {
+    sel_unit_q.change(function() {
         //to base
-        v_base = Number(txt_v.val()) * basefac_v;
+        q_base = Number(txt_q.val()) * basefac_q;
         //get new basefac
-        basefac_v = sel_unit_v.children("option").filter(":selected").val();
+        basefac_q = sel_unit_q.children("option").filter(":selected").val();
         //to specific unit
-        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
-    });
-
-    sel_unit_m.change(function() {
-        //to base
-        m_base = Number(txt_m.val()) * basefac_m;
-        //get new basefac
-        basefac_m = sel_unit_m.children("option").filter(":selected").val();
-        //to specific unit
-        txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
+        txt_q.val(Math.round(q_base / basefac_q * 100) / 100);
     });
     
     sel_unit_p.change(function() {
         //to base
-        m_base = Number(txt_m.val()) * basefac_m;
+        p_base = Number(txt_p.val()) * basefac_p;
         //get new basefac
-        basefac_m = sel_unit_m.children("option").filter(":selected").val();
+        basefac_p = sel_unit_p.children("option").filter(":selected").val();
         //to specific unit
-        txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
+        txt_p.val(Math.round(p_base / basefac_p * 100) / 100);
     });
     
 
