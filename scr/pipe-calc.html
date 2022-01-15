@@ -386,6 +386,15 @@
         txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
     });
     
+    sel_unit_p.change(function() {
+        //to base
+        m_base = Number(txt_m.val()) * basefac_m;
+        //get new basefac
+        basefac_m = sel_unit_m.children("option").filter(":selected").val();
+        //to specific unit
+        txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
+    });
+    
 
     function calcA(diameter) {
         return Math.pow(diameter, 2) * Math.PI / 4;
