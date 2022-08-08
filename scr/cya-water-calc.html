@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>Cyanursäuregehalt-Rechner - PoolCalcIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Mit diesem Rechner kann die Wassermenge ermittelt werden, welche getauscht werden muss, um den Cyanursäuregehalt auf den angegebenen Zielwert zu senken.">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2022 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, Cyanursäuregehalt, CYA, Cyanursäure, Wasserwechsel, Teilwassertausch, Chlor, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Cyanursäuregehalt-Rechner" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Mit diesem Rechner kann die Wassermenge ermittelt werden, welche getauscht werden muss, um den Cyanursäuregehalt auf den angegebenen Zielwert zu senken." />
+    <meta property="og:url" content="https://io.100prznt.de/cya-water-calc.html" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/header_cya_og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2022-08-08T08:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-2xlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/header_cya_hiRes.jpg" alt="Photo by RephiLe water (@revolution_in_filtration) on Unsplash">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img width="72" src="media/100prznt_logo_v3_WhiteOutline.svg"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom"><a href="index.html">PoolCalcIo</a></h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="qvd-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Cyanursäuregehalt-Rechner</div>
+                    <div class="uk-text uk-margin-top">Mit diesem Rechner kann die Wassermenge ermittelt werden, welche getauscht werden muss, um den Cyanursäuregehalt auf den angegebenen Zielwert zu senken.</div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small uk-margin-top" uk-grid id="v">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Poolvolumen</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="v">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_v">
+                            <option value="0.001">l</option>
+                            <option value="1" selected>m³</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="cya">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Cyanursäuregehalt (gemessen)</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="cya">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_cya">
+                            <option selected>ppm</option>
+                            <option>mg/l</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="cya_target">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Cyanursäuregehalt Zielwert</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="cya_target">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_cya_target">
+                            <option selected>ppm</option>
+                            <option>mg/l</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+                <div>
+                    Ergebnis
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="v_c">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Zu tauschende Wassermenge</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="v_c">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_v_c">
+                            <option value="0.001">l</option>
+                            <option value="1" selected="">m³</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2022</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@revolution_in_filtration" target="_blank">RephiLe water</a> on Unsplash.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
+                    <!--<a href="https://www.facebook.com/100prznt/" target="_blank" uk-icon="icon: facebook"></a>-->
+                    <a href="https://100prznt.de/" target="_blank" uk-icon="icon: world"></a>
+                    <a href="https://github.com/100prznt/PoolCalcIo/" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    });
+
+    //setZylinder();
+
+    var txt_v = $("input[name=v]").first();
+    var txt_cya = $("input[name=cya]").first();
+    var txt_cya_target = $("input[name=cya_target]").first();
+    var txt_v_c = $("input[name=v_c]").first();
+    var sel_unit_v = $("select[name=unit_v]").first();
+    var sel_unit_v_c = $("select[name=unit_v_c]").first();
+    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
+    var basefac_v_c = sel_unit_v_c.children("option").filter(":selected").val();
+
+    $('#qvd-calc').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').remove();
+
+        var v = Number(txt_v.val()) * basefac_v;
+        var cya = Number(txt_cya.val());
+        var cya_target = Number(txt_cya_target.val());
+
+        if (cya < cya_target) {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>Der Zielwert für den Cyanursäuregehalt muss kleiner als der aktuelle Wert sein.</p></div>");
+        } else {
+            console.log("V = " + v + " m^3/s");
+            console.log("CYA = " + cya + " ppm");
+            console.log("CYA_target = " + cya_target + " ppm");
+
+            var v_c = (cya - cya_target) * v / cya;
+
+            console.log("v_c = " + v_c + " m³");
+
+
+            txt_v_c.val(Math.round(v_c / basefac_v_c * 1000) / 1000);
+        }
+
+        //if (v <= 0) {
+        //    $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        //}
+    });
+
+
+
+    sel_unit_v.change(function() {
+        //to base
+        v_base = Number(txt_v.val()) * basefac_v;
+        //get new basefac
+        basefac_v = sel_unit_v.children("option").filter(":selected").val();
+        //to specific unit
+        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
+    });
+
+    sel_unit_v_c.change(function() {
+        //to base
+        v_c_base = Number(txt_v_c.val()) * basefac_v_c;
+        //get new basefac
+        basefac_v_c = sel_unit_v_c.children("option").filter(":selected").val();
+        //to specific unit
+        txt_v_c.val(Math.round(v_c_base / basefac_v_c * 100) / 100);
+    });
+</script>
+</body>
+</html>
