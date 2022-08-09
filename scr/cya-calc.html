@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>Cyanursäuregehalt - PoolCalcIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Berechnung des Cyanursäuregehalts nach Gabe von Chlorprodukten">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2022 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, , Chlor, Cyanursäure, Wasser, Umrechner Volumen, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Rechner für den Cyanursäuregehalt" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Berechnung des Cyanursäuregehalts nach Gabe von Chlorprodukten" />
+    <meta property="og:url" content="https://io.100prznt.de/cya-calc.html" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/header_cya_og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2022-08-08T10:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-2xlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/header_cya_hiRes.jpg" alt="Photo by RephiLe water (@revolution_in_filtration) on Unsplash">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img width="72" src="media/100prznt_logo_v3_WhiteOutline.svg"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom"><a href="index.html">PoolCalcIo</a></h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="cya-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Rechner für den Cyanursäuregehalt</div>
+                    <div class="uk-text uk-margin-top">Mit diesem Rechner kann die Konzentration der Cyanursäure, nach zugabe von organischen Chlorprodukten, ermittelt werden.</div>
+                </div>
+
+                <div class="uk-width-1-1">
+                    <h4 class="uk-heading-divider">Chlorprodukt</h4>
+                </div>
+                <div class="uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="product" value="1" checked> Natriumdichlorisocyanurat Dihydrat (Troclosen Natriumsalz-dihydrat)</label>
+                </div>
+                <div class="uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="product" value="2"> Natriumdichlorisocyanurat (Troclosen Natriumsalz)</label>
+                </div>
+                <div class="uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="product" value="3"> Trichlorisocyanursäure (Symclosen)</label>
+                </div>
+                <div class="uk-width-1-1">
+                    <h4 class="uk-heading-divider">Pool</h4>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small uk-margin-top" uk-grid>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Volumen</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                            <input class="uk-input" type="number" step=any name="v">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_v">
+                            <option value="0.001">l</option>
+                            <option value="1" selected>m³</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="uk-width-1-1">
+                    <h4 class="uk-heading-divider">Dosierung</h4>
+                </div>
+                
+                <div class="uk-width-1-1 uk-grid-small uk-margin-top" uk-grid>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Tablettengewicht</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                            <input class="uk-input" type="number" step=any name="m">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_m">
+                            <option value="1" selected>g</option>
+                            <option value="1000">kg</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small uk-margin-top" uk-grid>
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Anzahl</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                            <input class="uk-input" type="number" step=any name="n">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <input class="uk-input" value="Tabs" disabled>
+                    </div>
+                </div>
+
+
+                <div class="uk-width-1-1 uk-grid-small" uk-grid>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2022</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@revolution_in_filtration" target="_blank">RephiLe water</a> on Unsplash.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
+                    <a href="https://www.facebook.com/100prznt/" target="_blank" uk-icon="icon: facebook"></a>
+                    <a href="https://100prznt.de/" target="_blank" uk-icon="icon: world"></a>
+                    <a href="https://github.com/100prznt/PoolCalcIo/" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //$.getJSON( "version.json", function( data ) {
+    //    $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+    //    $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    //});
+
+    var radio_product = $("input[name=product]");
+    var cya = .504; //Troclosen Natriumsalz-dihydrat
+    var txt_v = $("input[name=v]").first();
+    var txt_m = $("input[name=m]").first();
+    var txt_n = $("input[name=n]").first();
+    var sel_unit_v = $("select[name=unit_v]").first();
+    var sel_unit_m = $("select[name=unit_m]").first();
+    var basefac_v = sel_unit_v.children("option").filter(":selected").val();
+    var basefac_m = sel_unit_m.children("option").filter(":selected").val();
+
+    $('#cya-calc').on('submit', function(e){
+        e.preventDefault();
+        console.log("start");
+        $('#alert').remove();
+        $('#result').remove();
+
+        v = Number(txt_v.val()) * basefac_v;
+        m = Number(txt_m.val()) * basefac_m;
+        n = Number(txt_n.val());
+
+
+        console.log("v = " + v);
+        console.log("m = " + m);
+        console.log("n = " + n);
+
+        cya_sum = 0;
+
+        if (n > 0) {
+
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table class='uk-table uk-table-small uk-table-hover uk-width-1-1' id='result-table'>" +
+                "<tr><th style='text-align: left'>Anzahl</th><th style='text-align: right'>Cyanursäure</th><th  style='text-align: right'>Konzentration (" + (Math.round(v * 10))/10 + " <span style='text-transform: lowercase'>m³</span>)</th></tr>" +
+                "</table></div></div>");
+
+            for (var i = 0; i < n; i++) {
+                console.log("step: " + i);
+                cya_sum += (m * cya);
+                cya_ppm = cya_sum / v;
+                icon = "happy";
+                icon_color = "success";
+                if (cya_ppm >= 20) {
+                    icon = "warning";
+                    icon_color = "warning";
+                }
+                if (cya_ppm >= 30) {
+                    icon_color = "danger";
+                }
+                console.log("cya_sum: " + cya_sum + " g");
+                console.log("cya_ppm: " + cya_ppm + " ppm");
+
+                $('#result-table').append("<tr><td>" + (i + 1) + " " + ((i == 0) ? "Tab" : "Tabs") + "</td><td style='text-align: right'>" + Math.round(cya_sum) + " g</td><td style='text-align: right'>" + Math.round(cya_ppm) + " ppm CYA <span uk-icon='" + icon + "' class='uk-text-" + icon_color + "'></span></td></tr>");
+            }
+        } else {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        }
+    });
+
+
+    radio_product.change(function () {
+        console.log("product changed");
+
+        switch ($("input[name=product]:checked").val()) {
+            case "1": //Troclosen Natriumsalz-dihydrat
+                console.log("Troclosen Natriumsalz-dihydrat");
+                cya = .504;
+                break;
+            case "2": //Troclosen Natriumsalz
+                console.log("Troclosen Natriumsalz");
+                cya = .587;
+                break;
+            case "3": //Symclosen
+                console.log("Symclosen");
+                cya = .555;
+                break;
+        }
+        //clear form!
+    });
+
+    
+
+    sel_unit_v.change(function() {
+        //to base
+        v_base = Number(txt_v.val()) * basefac_v;
+        //get new basefac
+        basefac_v = sel_unit_v.children("option").filter(":selected").val();
+        //to specific unit
+        txt_v.val(Math.round(v_base / basefac_v * 100) / 100);
+    });
+
+    sel_unit_m.change(function() {
+        //to base
+        m_base = Number(txt_m.val()) * basefac_m;
+        //get new basefac
+        basefac_m = sel_unit_m.children("option").filter(":selected").val();
+        //to specific unit
+        txt_m.val(Math.round(m_base / basefac_m * 100) / 100);
+    });
+</script>
+</body>
+</html>
