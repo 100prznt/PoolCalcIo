@@ -3,16 +3,16 @@
 <head>
     <title>Cyanursäuregehalt - PoolCalcIo</title>
     <meta charset="utf-8">
-    <meta name="description" content="Berechnung des Cyanursäuregehalts nach Gabe von Chlorprodukten">
+    <meta name="description" content="Berechnung des Cyanursäuregehalts nach Zugabe von organischen Chlorprodukten">
     <meta name="author" content="Ruemmler, Elias" />
     <meta name="copyright" content="Copyright 2022 Ruemmler, Elias - 100prznt.de" />
-    <meta name="keywords" content="Pool, Rechnner, , Chlor, Cyanursäure, Wasser, Umrechner Volumen, 100prznt" />
+    <meta name="keywords" content="Pool, Rechnner, Cyanursäuregehalt, Chlor, Cyanursäure, Wasser, Cyanursäurekonzentration, Troclosen, Symclosen, 100prznt" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- og: -->
     <meta property="og:locale" content="de_DE" />
     <meta property="og:title" content="Rechner für den Cyanursäuregehalt" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Berechnung des Cyanursäuregehalts nach Gabe von Chlorprodukten" />
+    <meta property="og:description" content="Berechnung des Cyanursäuregehalts nach Zugabe von organischen Chlorprodukten" />
     <meta property="og:url" content="https://io.100prznt.de/cya-calc.html" />
     <meta property="og:site_name" content="100prznt.de" />
     <meta property="og:image" content="https://io.100prznt.de/media/header_cya_og.jpg" />
@@ -50,7 +50,7 @@
             <form class="uk-grid-small" uk-grid id="cya-calc">
                 <div class="uk-width-1-1">
                     <div class="uk-legend">Rechner für den Cyanursäuregehalt</div>
-                    <div class="uk-text uk-margin-top">Mit diesem Rechner kann die Konzentration der Cyanursäure, nach zugabe von organischen Chlorprodukten, ermittelt werden.</div>
+                    <div class="uk-text uk-margin-top">Mit diesem Rechner kann die Konzentration der Cyanursäure, nach Zugabe von organischen Chlorprodukten, ermittelt werden.</div>
                 </div>
 
                 <div class="uk-width-1-1">
@@ -135,10 +135,10 @@
     </div>
 </div>
 <script>
-    //$.getJSON( "version.json", function( data ) {
-    //    $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
-    //    $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
-    //});
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    });
 
     var radio_product = $("input[name=product]");
     var cya = .504; //Troclosen Natriumsalz-dihydrat
@@ -167,10 +167,10 @@
 
         cya_sum = 0;
 
-        if (n > 0) {
+        if (n > 0 && v > 0 && m > 0) {
 
             $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'><table class='uk-table uk-table-small uk-table-hover uk-width-1-1' id='result-table'>" +
-                "<tr><th style='text-align: left'>Anzahl</th><th style='text-align: right'>Cyanursäure</th><th  style='text-align: right'>Konzentration (" + (Math.round(v * 10))/10 + " <span style='text-transform: lowercase'>m³</span>)</th></tr>" +
+                "<tr><th style='text-align: left'>Anzahl</th><th style='text-align: right'>Cyanur&shy;säure</th><th  style='text-align: right'>Kon&shy;zen&shy;t&shy;ra&shy;ti&shy;on (" + (Math.round(v * 10))/10 + " <span style='text-transform: lowercase'>m³</span>)</th></tr>" +
                 "</table></div></div>");
 
             for (var i = 0; i < n; i++) {
