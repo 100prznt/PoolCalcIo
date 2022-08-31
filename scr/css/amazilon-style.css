@@ -198,7 +198,7 @@
 
 /* Template 2 + 5 + 6 */
 .amazilon-tpl-2, .amazilon-tpl-5, .amazilon-tpl-6 {
-    width: 98%;
+    width: 100%;
     border: 1px solid #c1c1c1;
     padding: 0px 0px;
     font-size: 1.0em;
@@ -217,7 +217,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-right: 80px;
+    margin-right: 10px;
 }
 
 .amazilon-tpl-2 div.label, .amazilon-tpl-5 div.label, .amazilon-tpl-6 div.label {
