@@ -139,27 +139,6 @@
                     <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
                 </div>
             </form>
-
-            <div class="amazilon-tpl-2 amazilon-asin-B08ZCPLT32">
-                <div class="links">
-
-                    <div class="pic">
-                        <a href="https://www.amazon.de/dp/B08ZCPLT32?tag=100prznt-21&#038;linkCode=ogi&#038;th=1&#038;psc=1" target="_blank"><img src="https://m.media-amazon.com/images/I/41kgdnI-6UL._SL160_.jpg" style="max-width: 160px; max-height: 160px;" alt="Folienkönig Silofolie 6x6m in Rolle - GRÖßE WÄHLBAR! (0,65€/m²) Poolplane rechteckig, Abdeckplane, Abdeckfolie, Gartenfolie, Siloplane, Farbe: Schwarz/Weiß" title="Folienkönig Silofolie 6x6m in Rolle - GRÖßE WÄHLBAR! (0,65€/m²) Poolplane rechteckig, Abdeckplane, Abdeckfolie, Gartenfolie, Siloplane, Farbe: Schwarz/Weiß" /></a>
-                    </div>
-                </div>
-                <div class="rechts">
-                    <div class="info">
-                        <div class="title"><a href="https://www.amazon.de/dp/B08ZCPLT32?tag=100prznt-21&#038;linkCode=ogi&#038;th=1&#038;psc=1" target="_blank" rel="nofollow">Folienkönig Silofolie 6x6m in Rolle - GRÖßE WÄHLBAR! (0,65€/m²)...</a></div><div class="price">
-
-                           <span class="price-now">25,20 EUR</span> <span class="old-price"></span><span class="old-price-info"></span>
-                       </div>
-
-                       <div class="date">Stand: 31. August 2022 10:38 Uhr</div>
-                       <a href="https://www.amazon.de/dp/B08ZCPLT32?tag=100prznt-21&#038;linkCode=ogi&#038;th=1&#038;psc=1" class="amazilon-button-1" target="_blank">Jetzt auf Amazon kaufen</a>
-                   </div>
-               </div><div class="amazilon-adnotice">Advertisement</div>
-           </div>
-
         </div>
         <div class="uk-card-footer">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -244,8 +223,8 @@
         if (x > 0) {
             //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
             $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Die Abdeckplane sollte eine Größe von <strong>" + Math.round(x * 100) / 100 + " x " + Math.round(y * 100) / 100 + " m</strong> haben.</div></div>");
-            $.getJSON( "https://100prznt.de/wp-json/wp/v2/pages", function( data ) {
-                $('#content').append(data[0]["content"]["rendered"]);
+            $.getJSON( "https://100prznt.de/wp-json/wp/v2/posts/3081", function( data ) {
+                $('#content').append(data["content"]["rendered"]);
             });
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
