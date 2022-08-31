@@ -224,7 +224,7 @@
             //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
             $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Die Abdeckplane sollte eine Größe von <strong>" + Math.round(x * 100) / 100 + " x " + Math.round(y * 100) / 100 + " m</strong> haben.</div></div>");
             $.getJSON( "https://100prznt.de/wp-json/wp/v2/posts/3081", function( data ) {
-                $('#content').append(data["content"]["rendered"]);
+                $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'>" + data["content"]["rendered"] + "</div>");
             });
         } else {
             $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
