@@ -1,0 +1,763 @@
+/* Buttons */
+.amazilon-button-0, .amazilon-button-1, .amazilon-button-2, .amazilon-button-3, .entry-content a.amazilon-button-0, .entry-content a.amazilon-button-1, .entry-content a.amazilon-button-2, .entry-content a.amazilon-button-3, .entry a.amazilon-button-0, .entry a.amazilon-button-1, .entry a.amazilon-button-2, .entry a.amazilon-button-3 {
+    border: 1px solid #a88734;
+    display: inline-block;
+    color: #000000;
+    font-family: Arial;
+    line-height: 15px;
+    max-width: 90%;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    box-shadow: none;
+}
+
+.amazilon-button-0:hover, .amazilon-button-1:hover, .amazilon-button-2:hover, .amazilon-button-3:hover, .entry-content a.amazilon-button-0:hover, .entry-content a.amazilon-button-1:hover, .entry-content a.amazilon-button-2:hover, .entry-content a.amazilon-button-3:hover, .entry a.amazilon-button-0:hover, .entry a.amazilon-button-1:hover, .entry a.amazilon-button-2:hover, .entry a.amazilon-button-3:hover {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    box-shadow: none;
+}
+
+.amazilon-button-0, .entry a.amazilon-button-0, .entry-content a.amazilon-button-0 {
+    padding: 10px 10px 10px 35px;
+    background-image: linear-gradient(to top, #eebb3a 0%, #f4d486 80%);
+    background-color: #eebb3a;
+    background-image: url(amz.png);
+    background-position: 5px center;
+    width: 88%;
+    width: calc(100% - 45px);
+    text-decoration: none;
+}
+
+.amazilon-button-0:hover, .entry a.amazilon-button-0:hover, .entry-content a.amazilon-button-0:hover {
+    background-color: #f4d486;
+    text-decoration: none;
+}
+
+.amazilon-button-1, .entry a.amazilon-button-1, .entry-content a.amazilon-button-1 {
+    font-size: 1.05em;
+    padding: 10px 10px;
+    background-image: linear-gradient(to top, #eebb3a 0%, #f4d486 80%);
+    width: 88%;
+    width: calc(100% - 20px);
+    text-decoration: none;
+}
+
+.amazilon-button-1:hover, .entry a.amazilon-button-1:hover, .entry-content a.amazilon-button-1:hover {
+    background-image: linear-gradient(to bottom, #eebb3a 0%, #eebb3a 50%);
+    text-decoration: none;
+}
+
+.amazilon-button-1:before {
+    margin-right: 10px;
+    font-family: dashicons;
+    content: "\f174 ";
+    font-size: 1.2em;
+}
+
+.amazilon-button-2, .entry a.amazilon-button-2, .entry-content a.amazilon-button-2 {
+    padding: 20px 35px 20px 10px;
+    background-position: right bottom;
+    background-image: url(amz.png), linear-gradient(to top, #eebb3a 0%, #f4d486 80%);
+    font-size: 1.05em;
+    overflow: auto;
+    width: 88%;
+    width: calc(100% - 45px);
+    text-decoration: none;
+}
+
+.amazilon-button-2:hover, .entry a.amazilon-button-2:hover, .entry-content a.amazilon-button-2:hover {
+    background-image: url(amz.png), linear-gradient(to bottom, #eebb3a 0%, #eebb3a 50%);
+    text-decoration: none;
+}
+
+.amazilon-button-3, .entry a.amazilon-button-3, .entry-content a.amazilon-button-3 {
+    font-size: 1.05em;
+    padding: 10px 10px;
+    background-image: linear-gradient(to top, #eebb3a 0%, #f4d486 80%);
+    width: 88%;
+    width: calc(100% - 20px);
+    text-decoration: none;
+}
+
+.amazilon-button-3:hover, .entry a.amazilon-button-3:hover, .entry-content a.amazilon-button-3:hover {
+    background-image: linear-gradient(to bottom, #eebb3a 0%, #eebb3a 50%);
+    text-decoration: none;
+}
+
+
+/* Template 1  + 4*/
+.amazilon-tpl-1, .amazilon-tpl-4 {
+    width: 100%;
+    max-width: 225px;
+    border: 1px solid #c1c1c1;
+    padding: 10px 8px;
+    font-size: 1.0em;
+    min-height: 200px;
+    background-image: url(amazon.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    margin: 10px 20px 15px 0px;
+    float: left;
+    text-align: center;
+    background-color: #FFF;
+    position: relative;
+}
+
+.amazilon-tpl-1 div.amazilon-adnotice, .amazilon-tpl-4 div.amazilon-adnotice {
+    font-size: .8em;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.amazilon-tpl-1 div.label, .amazilon-tpl-4 div.label {
+    background-color: #E67A00;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #FFF;
+    font-size: .75em;
+    margin-top: 10px;
+}
+
+.amazilon-tpl-1 img.infoamz, .amazilon-tpl-4 img.infoamz {
+    float: left;
+    margin-right: -14px;
+}
+
+.amazilon-tpl-1 a, .amazilon-tpl-1 a:hover, .amazilon-tpl-4 a, .amazilon-tpl-4 a:hover {
+    text-decoration: none;
+    color: #000;
+    box-shadow: none;
+}
+
+.amazilon-tpl-1 .title, .amazilon-tpl-4 .title {
+    text-align: center;
+    padding: 8px 0px;
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+}
+
+.amazilon-tpl-1 .title a, .amazilon-tpl-4 .title a, .amazilon-tpl-1 .title a:hover, .amazilon-tpl-4 .title a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.amazilon-tpl-1 .pic, .amazilon-tpl-4 .pic {
+    border-bottom: 0px solid #525252;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    height: 75px;
+}
+
+.amazilon-tpl-1 img, .amazilon-tpl-4 img {
+    margin: auto;
+}
+
+.amazilon-tpl-1 .price, .amazilon-tpl-4 .price {
+    text-align: center;
+}
+
+.amazilon-tpl-1 .price-now, .amazilon-tpl-4 .price-now {
+    color: green;
+    font-weight: bold;
+}
+
+.amazilon-tpl-1 .old-price, .amazilon-tpl-4 .old-price {
+    text-decoration: line-through;
+    color: #ff0000;
+    font-size: 0.8em;
+}
+
+.amazilon-tpl-1 .amazilon-button-1, .amazilon-tpl-4 .amazilon-button-3 {
+    width: 85%;
+}
+
+.amazilon-tpl-1 .prime, .amazilon-tpl-4 .prime {
+    text-align: center;
+}
+
+.amazilon-tpl-1 .date, .amazilon-tpl-4 .date {
+    line-height: 1em;
+    font-size: 0.6em;
+    color: #999999;
+    text-align: center;
+    margin: 2px 0;
+}
+
+.amazilon-tpl-1 .amazilon-button-0, .amazilon-tpl-1 .amazilon-button-2, .amazilon-tpl-4 .amazilon-button-0, .amazilon-tpl-4 .amazilon-button-2, .amazilon-table .amazilon-button-0, .amazilon-table .amazilon-button-2 {
+    box-sizing: border-box;
+}
+
+/* Template 2 + 5 + 6 */
+.amazilon-tpl-2, .amazilon-tpl-5, .amazilon-tpl-6 {
+    width: 98%;
+    border: 1px solid #c1c1c1;
+    padding: 0px 0px;
+    font-size: 1.0em;
+    min-height: 165px;
+    overflow: auto;
+    background-image: url(amazon.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin-bottom: 12px;
+    background-color: #FFF;
+    position: relative;
+}
+
+.amazilon-tpl-2 div.amazilon-adnotice, .amazilon-tpl-5 div.amazilon-adnotice, .amazilon-tpl-6 div.amazilon-adnotice {
+    font-size: .8em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 80px;
+}
+
+.amazilon-tpl-2 div.label, .amazilon-tpl-5 div.label, .amazilon-tpl-6 div.label {
+    background-color: #E67A00;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #FFF;
+    font-size: .75em;
+}
+
+.amazilon-tpl-2 a, .amazilon-tpl-2 a:hover, .amazilon-tpl-5 a, .amazilon-tpl-5 a:hover, .amazilon-tpl-6 a, .amazilon-tpl-6 a:hover {
+    text-decoration: none;
+    color: #000;
+    box-shadow: none;
+}
+
+.amazilon-tpl-2 img.infoamz, .amazilon-tpl-5 img.infoamz, .amazilon-tpl-6 img.infoamz {
+    float: left;
+    margin: .5em 0 0 .5em;
+}
+
+.amazilon-tpl-2 .title, .amazilon-tpl-5 .title {
+    text-align: right;
+    padding: 5px 0px;
+    font-size: 1.0em;
+    color: #000;
+}
+
+.amazilon-tpl-6 .title {
+    text-align: left;
+}
+
+.amazilon-tpl-2 .title a, .amazilon-tpl-5 .title a, .amazilon-tpl-6 .title a, .amazilon-tpl-2 .title a:hover, .amazilon-tpl-5 .title a:hover, .amazilon-tpl-6 .title a:hover {
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+}
+
+.amazilon-tpl-2 .pic, .amazilon-tpl-5 .pic, .amazilon-tpl-6 .pic {
+    text-align: left;
+    border: 0px solid #525252;
+    float: left;
+    margin: .5em 1em .5em .5em;
+    color: #000;
+}
+
+.amazilon-tpl-2 .pic img, .amazilon-tpl-5 .pic img, .amazilon-tpl-6 .pic img {
+    max-width: 160px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.amazilon-tpl-2 .info, .amazilon-tpl-5 .info, .amazilon-tpl-6 .info {
+    float: left;
+    width: 98%;
+    text-align: right;
+    margin-right: 8px;
+    margin-bottom: 20px;
+}
+
+.amazilon-tpl-6 .info {
+    text-align: left;
+}
+
+.amazilon-tpl-2 .price-now, .amazilon-tpl-5 .price-now, .amazilon-tpl-6 .price-now {
+    color: green;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.amazilon-tpl-2 .old-price, .amazilon-tpl-5 .old-price, .amazilon-tpl-6 .old-price {
+    text-decoration: line-through;
+    color: #f00;
+}
+
+.amazilon-tpl-2 .price, .amazilon-tpl-5 .price, .amazilon-tpl-6 .price {
+}
+
+.amazilon-tpl-2 .date, .amazilon-tpl-5 .date, .amazilon-tpl-6 .date {
+    font-size: 0.6em;
+    color: #999999;
+    text-align: right;
+}
+
+.amazilon-tpl-6 .date {
+    text-align: left;
+}
+
+.amazilon-tpl-2 .links, .amazilon-tpl-5 .links, .amazilon-tpl-6 .links {
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+
+.amazilon-tpl-6 .links {
+    max-width: 190px;
+}
+
+.amazilon-tpl-2 .rechts, .amazilon-tpl-5 .rechts, .amazilon-tpl-6 .rechts {
+    width: 70%;
+    float: left;
+    text-align: right;
+}
+
+.amazilon-tpl-6 .rechts {
+    text-align: left;
+}
+
+.amazilon-tpl-2 .prime, .amazilon-tpl-5 .prime, .amazilon-tpl-6 .prime {
+    margin-bottom: 0px;
+    margin-right: 5px;
+    width: 55px;
+    vertical-align: middle;
+}
+
+.amazilon-tpl-2 .amazilon-button-1, .amazilon-tpl-5 .amazilon-button-3 {
+    width: 85%;
+}
+
+.amazilon-tpl-6 .amazilon-button-1 {
+    width: 65%;
+}
+
+.amazilon-tpl-2 ul.amazilon-features, .amazilon-tpl-5 ul.amazilon-features, .amazilon-tpl-6 ul.amazilon-features {
+    text-align: left;
+    list-style-position: outside;
+    list-style-type: disc;
+    margin-left: 1em;
+}
+
+/* Template 3 */
+.amazilon-tpl-3 {
+    width: 95%;
+    max-width: 400px;
+    border: 1px solid #c1c1c1;
+    padding: 10px 8px;
+    font-size: 1.0em;
+    min-height: 200px;
+    background-image: url(amazon.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    margin: 10px 20px 15px 0px;
+    float: left;
+    text-align: center;
+    background-color: #FFF;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.amazilon-tpl-3 div.amazilon-adnotice {
+    font-size: .8em;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.amazilon-tpl-3 div.label {
+    background-color: #E67A00;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #FFF;
+    font-size: .75em;
+    margin-top: 10px;
+}
+
+.amazilon-tpl-3 a, .amazilon-tpl-3 a:hover {
+    text-decoration: none;
+    color: #000;
+    box-shadow: none;
+}
+
+.amazilon-tpl-3 .infoamz {
+    float: left;
+    margin-right: -14px;
+}
+
+.amazilon-tpl-3 .title {
+    text-align: center;
+    padding: 8px 0px;
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+}
+
+.amazilon-tpl-3 .title a, .amazilon-tpl-3 .title a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.amazilon-tpl-3 .pic {
+    text-align: center;
+    border-bottom: 0px solid #525252;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    height: 160px;
+}
+
+.amazilon-tpl-3 img {
+    margin: auto;
+}
+
+.amazilon-tpl-3 .price {
+    text-align: center;
+}
+
+.amazilon-tpl-3 .price-now {
+    color: green;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.amazilon-tpl-3 .old-price {
+    text-decoration: line-through;
+    color: #ff0000;
+    font-size: 0.8em;
+}
+
+.amazilon-tpl-3 .prime {
+    text-align: center;
+}
+
+.amazilon-tpl-3 .date {
+    font-size: 0.6em;
+    color: #999999;
+    text-align: center;
+}
+
+.amazilon-tpl-3 .amazilon-button-0 {
+    width: 85%;
+}
+
+/* Template 7 */
+
+.amazilon-tpl-7 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px dotted black;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.amazilon-tpl-7 div.amazilon-adnotice {
+    font-size: .8em;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.amazilon-tpl-7 .old-price {
+    text-decoration: line-through;
+    color: #ff0000;
+    font-size: 0.8em;
+}
+
+.amazilon-tpl-7 .image {
+    float: left;
+    min-width: 160px;
+    min-height: 160px;
+    text-align: center;
+    margin-right: .5em;
+}
+
+.amazilon-tpl-7 a, .amazilon-tpl-7 a:hover {
+    text-decoration: none;
+    color: #000;
+    box-shadow: none;
+}
+
+.amazilon-tpl-1 a img, .amazilon-tpl-2 a img, .amazilon-tpl-3 a img, .amazilon-tpl-4 a img, .amazilon-tpl-5 a img, .amazilon-tpl-6 a img, .amazilon-tpl-7 a img {
+    box-shadow: initial;
+    margin: initial;
+}
+
+.amazilon-tpl-7 .infobox {
+    float: right;
+}
+
+/* Vergleichstabellen */
+.amazilon-compare {
+    width: 98%;
+    display: table;
+    box-sizing: border-box;
+}
+
+.amazilon-compare .amazilon-col {
+    min-width: 190px;
+    border: 1px solid #c3c3c3;
+    min-height: 400px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    margin: -1px -1px 0 0;
+    box-sizing: border-box;
+}
+
+.amazilon-compare .amazilon-col div.label {
+    background-color: #E67A00;
+    padding: 0 .5em;
+    color: #FFF;
+    font-size: .75em;
+    margin-bottom: 5px;
+}
+
+.entry-content .amazilon-compare a, .entry .amazilon-compare a, .entry-content .amazilon-compare a img, .entry .amazilon-compare a img {
+    text-decoration: none;
+    box-shadow: initial;
+}
+
+.amazilon-compare .amazilon-col .titleamz {
+    line-height: 1.2em;
+    font-size: 1em;
+    height: 3.5em;
+    overflow: hidden;
+}
+
+.amazilon-compare .amazilon-col .picamz {
+    height: 160px;
+}
+
+.amazilon-compare .amazilon-col img {
+    display: initial;
+    border: 0;
+}
+
+.amazilon-compare .amazilon-col .infoamz {
+    float: left;
+}
+
+.amazilon-compare .amazilon-col .dateamz {
+    line-height: 1em;
+    font-size: 0.6em;
+    color: #999999;
+    text-align: center;
+}
+
+.amazilon-compare .amazilon-col .rabattamz {
+    font-size: .7em;
+}
+
+.amazilon-compare .amazilon-col.amazilon-highlight {
+    box-shadow: 2px 2px 5px #888;
+    width: 160px;
+    margin-top: -5px;
+}
+
+/* automatische Suchergebnisse */
+.amazilon-autosearch-results {
+    clear: both;
+}
+
+/* Produkttabelle */
+div.amazilon-table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table.amazilon-table, .entry-content table.amazilon-table, .entry table.amazilon-table {
+    table-layout: fixed;
+    width: initial;
+}
+
+table.amazilon-table tr.amazilon-row {
+}
+
+table.amazilon-table tr.amazilon-row:nth-child(odd) {
+    background-color: #EEE;
+}
+
+table.amazilon-table tr.amazilon-row:first-child {
+    background-color: initial;
+}
+
+table.amazilon-table tr.amazilon-row td:first-child, table.amazilon-table tr.amazilon-row th:first-child {
+    vertical-align: top;
+}
+
+table.amazilon-table tr.amazilon-row td, table.amazilon-table tr.amazilon-row th {
+    border: 0;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-cell, .entry-content table.amazilon-table tr.amazilon-row td.amazilon-cell, .entry table.amazilon-table tr.amazilon-row td.amazilon-cell {
+    padding: .2em;
+    max-width: 200px;
+    min-width: 200px;
+    word-wrap: initial;;
+}
+
+table.amazilon-table tr.amazilon-row th.amazilon-header-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row th.amazilon-header {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-product-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-product {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-product div {
+    overflow: hidden;
+    line-height: 1.5em;
+    max-height: 3em;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-image-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-image {
+    text-align: center;
+    height: 170px;
+    vertical-align: top;
+    position: relative;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-image img.infoamz {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-price-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row span.amazilon-price {
+    color: darkgreen;
+    font-weight: 600;
+}
+
+table.amazilon-table tr.amazilon-row span.amazilon-price-old {
+    color: red;
+    text-decoration: line-through;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-savings-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-savings {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-ratings-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-ratings {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-prime-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-prime {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-button-text {
+    text-align: left;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-button {
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-state-text {
+    text-align: left;
+    font-size: .75em;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-state {
+    font-size: .75em;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-state span.amazilon-adnotice {
+    float: right;
+    margin-right: 2px;
+}
+
+table.amazilon-table tr.amazilon-row td.amazilon-features {
+    padding-right: .5em;
+}
+
+/* Schatten */
+.amazilon-shadow {
+    box-shadow: 2px 2px 3px #888;
+}
+
+
+.widget_amazilon_widget .amazilon-tpl-1, .widget_amazilon_widget .amazilon-tpl-2, .widget_amazilon_widget .amazilon-tpl-3, .widget_amazilon_widget .amazilon-tpl-4, .widget_amazilon_widget .amazilon-tpl-5, .widget_amazilon_widget .amazilon-tpl-6, .widget_amazilon_widget .amazilon-compare {
+    float: initial;
+    margin: auto;
+}
+
+
+/* Preistyp-Label */
+.amazilon-preistypdisplay {
+    margin-left: 0.25em;
+    font-size: .75em;
+    border-radius: 50%;
+    background-color: #CCC;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    line-height: 1em;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    top: -0.125em;
+}
+.amazilon-tpl-6 .amazilon-preistypdisplay, .amazilon-tpl-6s .amazilon-preistypdisplay {
+    margin-right: .25em;
+}
+.amazilon-tpl-7 .amazilon-preistypdisplay, .amazilon-tpl-7s .amazilon-preistypdisplay {
+    margin-left: 0;
+    margin-right: .25em;
+}
+
+/* Tooltip */
+.b-tooltip{
+    border: 3px solid #fff;
+    display: inline-block;
+    font-size: .875em;
+    padding: .75em;
+    position: absolute;
+    text-align: center
+}
+.b-tooltip-light{
+    background: #eaeaea;
+    background: linear-gradient(to bottom, #fdfdfd 0%, #eaeaea 100%);
+    box-shadow: 0px 0px 6px 2px rgba(110,110,110,0.4);
+    color: #242424;
+}
+.b-tooltip-dark{
+    background: #242424;
+    background: linear-gradient(to bottom, #6e6e6e 0%, #242424 100%);
+    box-shadow: 0px 0px 6px 2px #6e6e6e;
+    color: #fff;
+}
