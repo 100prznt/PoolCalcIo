@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+    <title>Rechner - PoolCalcIo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Berechnung der ...">
+    <meta name="author" content="Ruemmler, Elias" />
+    <meta name="copyright" content="Copyright 2022 Ruemmler, Elias - 100prznt.de" />
+    <meta name="keywords" content="Pool, Rechnner, Winkel, Rechtwinklig, Parallel, Fundament, Bodenplatte, 100prznt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- og: -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Berechnung der ..." />
+    <meta property="og:url" content="https://io.100prznt.de/angle-calc.html" />
+    <meta property="og:site_name" content="100prznt.de" />
+    <meta property="og:image" content="https://io.100prznt.de/media/header_digger_og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="https://www.facebook.com/elias.rmmlr" />
+    <meta property="article:publisher" content="https://www.facebook.com/100prznt">
+    <meta property="article:published_time" content="2019-03-21T10:00:00+00:00" />
+    <meta property="fb:app_id" content="368227930243716" />
+    <!-- includes -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-height-viewport uk-padding-remove-top@m">
+    <div class="uk-card uk-card-default uk-width-2xlarge@m uk-height-viewport@m uk-align-center">
+        <div class="uk-card-media-top">
+            <img src="media/header_digger_hiRes.jpg" alt="Photo by Sandy Millar (@sandym10) on Unsplash">
+        </div>
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <a href="https://github.com/100prznt" target="_blank"><img width="72" src="media/100prznt_logo_v3_WhiteOutline.svg"></a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom"><a href="index.html">PoolCalcIo</a></h3>
+                    <p class="uk-text-meta uk-margin-remove-top" id="version">v1.0.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body" id="content">
+            <form class="uk-grid-small" uk-grid id="qvd-calc">
+                <div class="uk-width-1-1">
+                    <div class="uk-legend">Rechner</div>
+                </div>
+
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="a">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">a</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="a">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_a">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="b">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">b</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="b">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_b">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="d">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">d</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="d">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_d">
+                            <option value="0.01">cm</option>
+                            <option value="1" selected>m</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-1 uk-grid-small" uk-grid>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-top">Berechnung</button>
+                </div>
+                <div>
+                    Ergebnisse
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="x">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Korrektur (x)</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="x">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <select class="uk-select" name="unit_x">
+                            <option value="0.01" selected>cm</option>
+                            <option value="1">m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="beta">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label">Winkelabweichung</div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="beta">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <input class="uk-input" value="°" disabled="">
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-grid-small" uk-grid id="beta_p">
+                    <div class="uk-width-2-5@m uk-width-1-1">
+                        <div class="uk-form-label"></div>
+                    </div>
+                    <div class="uk-width-2-5@m uk-width-1-2">
+                        <input class="uk-input" type="number" step=any name="beta_p">
+                    </div>
+                    <div class="uk-width-1-5@m uk-width-1-2">
+                        <input class="uk-input" value="%" disabled="">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="uk-card-footer">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta">Copyright © <span id="c-year">2019</span> Ruemmler, Elias all rights reserved. Photo by <a href="https://unsplash.com/@sandym10" target="_blank">Sandy Millar</a> on Unsplash.</p>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="https://instagram.com/100prznt_de/" target="_blank" uk-icon="icon: instagram"></a>
+                    <!--<a href="https://www.facebook.com/100prznt/" target="_blank" uk-icon="icon: facebook"></a>-->
+                    <a href="https://100prznt.de/" target="_blank" uk-icon="icon: world"></a>
+                    <a href="https://github.com/100prznt/PoolCalcIo/" target="_blank" uk-icon="icon: github"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.getJSON( "version.json", function( data ) {
+        $('#version').text("v" + data["version"] + " (" + new Date(data["committimestamp"]).toLocaleDateString() + ")");
+        $('#c-year').text(new Date(data["committimestamp"]).getFullYear());
+    });
+
+    var txt_a = $("input[name=a]").first();
+    var txt_b = $("input[name=b]").first();
+    var txt_d = $("input[name=d]").first();
+    var txt_x = $("input[name=x]").first();
+    var txt_beta = $("input[name=beta]").first();
+    var txt_beta_p = $("input[name=beta_p]").first();
+    var sel_unit_a = $("select[name=unit_a]").first();
+    var sel_unit_b = $("select[name=unit_b]").first();
+    var sel_unit_d = $("select[name=unit_d]").first();
+    var sel_unit_x = $("select[name=unit_x]").first();
+    var basefac_a = sel_unit_a.children("option").filter(":selected").val();
+    var basefac_b = sel_unit_b.children("option").filter(":selected").val();
+    var basefac_d = sel_unit_d.children("option").filter(":selected").val();
+    var basefac_x = sel_unit_x.children("option").filter(":selected").val();
+
+    $('#qvd-calc').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').remove();
+
+        var a = Number(txt_a.val()) * basefac_a;
+        var b = Number(txt_b.val()) * basefac_b;
+        var d = Number(txt_d.val()) * basefac_d;
+
+
+        var alphaRad = Math.acos((Math.pow(b,2) + Math.pow(a,2) - Math.pow(d,2))/(2*b*a));
+        var alphaDeg = alphaRad * 180 / Math.PI;
+
+        var betaDeg = (alphaDeg - 90) / 2;
+        var betaRad = Math.PI * betaDeg / 180.0;
+
+        var y = Math.sin(betaRad) * b;
+
+        var x = -2 * y;
+        var xCentimeter = x * 100;
+
+        if (true) {
+            txt_x.val(Math.round(x / basefac_x * 100) / 100);
+            txt_beta.val(Math.round(betaDeg * 100)/100);
+            txt_beta_p.val(Math.round(betaDeg * 10000 / 45)/ 100);
+        } else {
+            $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
+        }
+    });
+
+
+
+    sel_unit_a.change(function() {
+        //to base
+        a_base = Number(txt_a.val()) * basefac_a;
+        //get new basefac
+        basefac_a = sel_unit_a.children("option").filter(":selected").val();
+        //to specific unit
+        txt_a.val(Math.round(a_base / basefac_a * 100) / 100);
+    });
+
+    sel_unit_b.change(function() {
+        //to base
+        b_base = Number(txt_b.val()) * basefac_b;
+        //get new basefac
+        basefac_b = sel_unit_b.children("option").filter(":selected").val();
+        //to specific unit
+        txt_b.val(Math.round(b_base / basefac_b * 100) / 100);
+    });
+
+    sel_unit_d.change(function() {
+        //to base
+        d_base = Number(txt_d.val()) * basefac_d;
+        //get new basefac
+        basefac_d = sel_unit_d.children("option").filter(":selected").val();
+        //to specific unit
+        txt_d.val(Math.round(d_base / basefac_d * 100) / 100);
+    });
+</script>
+</body>
+</html>
