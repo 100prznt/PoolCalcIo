@@ -246,7 +246,12 @@
 
         console.log("p = " + deltaP_Bar + " bar");
 
-        txt_p.val(deltaP_Bar * 1000);
+        //txt_p.val(deltaP_Bar * 1000);
+        
+        //get new basefac
+        basefac_p = sel_unit_p.children("option").filter(":selected").val();
+        //to specific unit
+        txt_p.val(Math.round(deltaP_Bar / basefac_p * 100) / 100);
 
         //if (v <= 0) {
         //    $('#content').prepend("<div uk-alert class='uk-alert-danger' id='alert'><a class='uk-alert-close' uk-close></a><h3>Eingabe fehlerhaft</h3><p>[...] Als Dezimaltrennzeichen ist ein Komma [,] zu verwenden.</p></div>");
