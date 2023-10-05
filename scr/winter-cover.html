@@ -213,13 +213,13 @@
                 a = Number(txt_a.val()) * basefac_a;
                 b = Number(txt_b.val()) * basefac_b;
 
-                x = 2 * (2 * t - w) + a;
-                y = 2 * (2 * t - w) + b;
+                x = 2 * (2 * t - w) + a + 0.4;
+                y = 2 * (2 * t - w) + b + 0.4;
         		console.log("results");
         		console.log(x);
         		console.log(y);
 
-                infoMessage = "<br>Durch die schrägen Seiten, beim Rechteckpool, sollten die Folie in Länge und Breite um je <strong>50 cm größer</strong> gewählt werden.";
+                infoMessage = "<br>Bedingt durch die schrägen Seiten und Stützen vom Rechteckpool, enthält die ermittelte Foliengröße einen Zuschlag von je 40 cm.";
             default:
 
                 break;
