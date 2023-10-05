@@ -54,6 +54,7 @@
                     <div class="uk-legend">Berechnung der Größe einer Abdeckplane</div>
                     <p>Mit diesem Rechner kann die Größe einer Abdeckplane, zur kompletten Abdeckung eines freistehenden Pools, berechnet werden. Die Plane reicht dabei, wie in der Grafik dargestellt, vom Boden an über den kompletten Pool.<br>
                     Um Algenwachstum effektiv zu verhindern ist es erforderlich, dass die verwendete Plane lichtdicht ist und der Pool komplett abgedeckt ist. Als günstig und gut geeignet bietet sich hier eine <a href="https://amzn.to/3Q5wnKy" target="_blank" title="[Werbung] Jetzt auf Amazon kaufen">Silofolie</a> an.</p>
+                    <p>Bei den Poolabmessungen (Durchmesser, Länge bzw. Breite) sind die Außenmaße anzugeben, mit diesen Maßen werden Frampools in der Regel auch beworben, die tatsächliche Wasserfläche kann also kleiner sein.</p>
                 </div>
 
                 <div class="uk-width-1-1">
@@ -197,6 +198,7 @@
 
         var x = 0;
         var y = 0;
+        var infoMessage = "";
 
         switch ($("input[name=shape]:checked").val()) {
             case "1": //zylinder
@@ -216,6 +218,8 @@
         		console.log("results");
         		console.log(x);
         		console.log(y);
+
+                infoMessage = "<br>Durch die schrägen Seiten, beim Rechteckpool, sollten die Folie in Länge und Breite um je <strong>50 cm größer</strong> gewählt werden.";
             default:
 
                 break;
@@ -223,7 +227,7 @@
 
         if (x > 0) {
             //$('#result').html("Die Abdeckplane muss eine Größe von <strong>" + x + " x " + y + " m</strong> haben." );
-            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Die Abdeckplane sollte eine Größe von <strong>" + Math.round(x * 100) / 100 + " x " + Math.round(y * 100) / 100 + " m</strong> haben.</div></div>");
+            $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'><div uk-alert class='uk-width-1-1'>Die Abdeckplane sollte mindestens eine Größe von <strong>" + Math.round(x * 100) / 100 + " x " + Math.round(y * 100) / 100 + " m</strong> haben." + infoMessage + "</div></div>");
             $.getJSON( "https://100prznt.de/wp-json/wp/v2/posts/3081", function( data ) {
                 $('#content').append("<div class='uk-width-1-1 uk-grid-small' uk-grid id='result'>" + data["content"]["rendered"] + "</div>");
             });
