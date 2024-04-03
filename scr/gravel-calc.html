@@ -137,14 +137,17 @@
                 <div class="uk-width-1-1">
                     <div class="uk-form-label">Material</div>
                 </div>
-                <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="mat" value="1" checked> Splitt (16-32)</label>
+                <div class="uk-width-1-4@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="mat" value="1" checked> Basalt-Splitt (16-32)</label>
                 </div>
-                <div class="uk-width-1-3@m uk-width-1-1">
-                    <label><input class="uk-radio" type="radio" name="mat" value="2"> Splitt (2-4)</label>
+                <div class="uk-width-1-4@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="mat" value="2"> Basalt-Splitt (2-4)</label>
                 </div>
-                <div class="uk-width-1-3@m uk-width-1-1">
+                <div class="uk-width-1-4@m uk-width-1-1">
                     <label><input class="uk-radio" type="radio" name="mat" value="3"> Sand</label>
+                </div>
+                <div class="uk-width-1-4@m uk-width-1-1">
+                    <label><input class="uk-radio" type="radio" name="mat" value="4"> Frostschutz</label>
                 </div>
                 <div class="uk-width-1-1 uk-grid-small" uk-grid id="m">
                     <div class="uk-width-2-5@m uk-width-1-1">
@@ -293,7 +296,11 @@
     radio_mat.change(function () {
         console.log("material changed");
 
-        //daten von: https://www.baustoffe-liefern.de/Rechner/Splitt.html
+        //Datenquellen:
+        // - https://www.baustoffe-liefern.de/Rechner/Splitt.html
+        // - https://bonke-baulogistik.de/schuettgut-umrechnung.html
+        // - https://www.kiesdirekt.de/shop/menge-rechner.asp?groupid=22&productid=513
+        //Dichte "density_mat" in kg/cbm
         switch ($("input[name=mat]:checked").val()) {
             case "1": //Basalt-Splitt
                 console.log("schotter");
@@ -305,7 +312,11 @@
                 break;
             case "3": //sand
                 console.log("sand");
-                density_mat = 1520;
+                density_mat = 1530;
+                break;
+            case "4": //Frostschutz 0 - 32
+                console.log("frostschutz");
+                density_mat = 1650;
                 break;
             default:
                 console.log("default");
